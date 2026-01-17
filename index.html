@@ -2,18 +2,43 @@
 <html lang="en" data-lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sette — Software Engineer</title>
+    <title>
+      Iugor Sette — Software Engineer | Fullstack & Scalable Systems
+    </title>
+
     <meta
       name="description"
       content="Software Engineer focused on scalable and maintainable systems. Fullstack development, real client projects and clean architecture." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iugor Sette" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iugor Sette — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software Engineer focused on scalable products, custom systems and real client projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://SEUDOMINIO.com" />
+    <meta property="og:image" content="https://SEUDOMINIO.com/assets/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet" />
+      onload="
+        this.onload = null
+        this.rel = 'stylesheet'
+      " />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    </noscript>
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -62,7 +87,9 @@
               alt="Energy Fit website preview" />
             <div class="project-overlay">
               <span class="project-tag">Web / UX</span>
-              <button data-iframe="https://energyfit-ct.vercel.app/">
+              <button
+                data-iframe="https://energyfit-ct.vercel.app/"
+                aria-label="Open project preview">
                 View Project
               </button>
             </div>
@@ -83,7 +110,9 @@
               alt="Jonny Alvez website preview" />
             <div class="project-overlay">
               <span class="project-tag">Web / UX</span>
-              <button data-iframe="https://jonny-alvez.vercel.app/">
+              <button
+                data-iframe="https://jonny-alvez.vercel.app/"
+                aria-label="Open project preview">
                 View Project
               </button>
             </div>
@@ -97,10 +126,17 @@
 
         <div class="project-card">
           <div class="project-thumb">
-            <img src="assets/crm-dashboard.png" alt="CRM website preview" />
+            <img
+              src="assets/crm-dashboard.png"
+              loading="lazy"
+              width="1200"
+              height="750"
+              alt="CRM website preview" />
             <div class="project-overlay">
               <span class="project-tag"> Web / Fullstack </span>
-              <button data-gallery>View details</button>
+              <button data-gallery aria-label="View CRM project details">
+                View details
+              </button>
             </div>
           </div>
 
@@ -143,11 +179,23 @@
         </section>
 
         <section class="crm-gallery">
-          <img src="assets/crm-client.png" alt="CRM client overview" />
+          <img
+            src="assets/crm-client.png"
+            alt="CRM client overview"
+            loading="lazy" />
           <!-- o clique para o zoom n deveria ser aqui?  -->
-          <img src="assets/crm-dashboard.png" alt="CRM dashboard" />
-          <img src="assets/crm-kanban.png" alt="CRM kanban board" />
-          <img src="assets/crm-users.png" alt="CRM users management" />
+          <img
+            src="assets/crm-dashboard.png"
+            alt="CRM dashboard"
+            loading="lazy" />
+          <img
+            src="assets/crm-kanban.png"
+            alt="CRM kanban board"
+            loading="lazy" />
+          <img
+            src="assets/crm-users.png"
+            alt="CRM users management"
+            loading="lazy" />
         </section>
       </div>
     </div>
@@ -194,6 +242,11 @@
             <strong>custom products</strong>, internal tools, CRMs, dashboards
             and integrations where clean architecture and developer experience
             really matter.
+          </p>
+          <p>
+            I have experience working with startups, agencies and real clients,
+            delivering production-ready web applications, CRMs and internal
+            tools.
           </p>
         </div>
 

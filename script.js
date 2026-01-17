@@ -29,8 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
     mouseX = e.clientX
     mouseY = e.clientY
   })
+  let heroVisible = true
+
+  const heroObserver = new IntersectionObserver(
+    ([entry]) => {
+      heroVisible = entry.isIntersecting
+    },
+    { threshold: 0.1 },
+  )
+
+  heroObserver.observe(document.querySelector('.hero'))
 
   function animate() {
+    if (!heroVisible) {
+      requestAnimationFrame(animate)
+      return
+    }
+
     ctx.clearRect(0, 0, w, h)
 
     dots.forEach((d) => {
@@ -53,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(animate)
   }
+
   animate()
 
   /* =============================

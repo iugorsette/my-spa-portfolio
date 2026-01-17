@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sette — Software Engineer</title>
+    <meta
+      name="description"
+      content="Software Engineer focused on scalable and maintainable systems. Fullstack development, real client projects and clean architecture." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- TOP CONTROLS -->
+    <div class="top-controls">
+      <!-- <button id="langToggle">EN</button> -->
+
+      <div class="theme-switch">
+        <input type="checkbox" id="themeToggle" aria-label="Toggle theme" />
+        <span class="slider"></span>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <canvas id="heroCanvas"></canvas>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <span class="hero-name">Iugor Sette</span>
+        <span class="hero-eyebrow">Software Engineer</span>
+
+        <h1 class="hero-title">
+          Building <span class="accent">Scalable</span><br />
+            Products for Real Businesses
+        </h1>
+
+        <p class="hero-description">
+  Fullstack engineer with experience delivering production-ready systems,
+  internal tools and custom platforms for real clients.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+      <h3>Projects</h3>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-thumb">
+            <img
+              src="assets/energyfit-thumb.png"
+              alt="Energy Fit website preview" />
+            <div class="project-overlay">
+              <span class="project-tag">Web / UX</span>
+              <button data-iframe="https://energyfit-ct.vercel.app/">
+                View Project
+              </button>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h4>Energy Fit</h4>
+            <p>
+              Landing page focused on UX & performance to a crosstrainer box.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <img
+              src="assets/jonny-alvez-thumb.png"
+              alt="Jonny Alvez website preview" />
+            <div class="project-overlay">
+              <span class="project-tag">Web / UX</span>
+              <button data-iframe="https://jonny-alvez.vercel.app/">
+                View Project
+              </button>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h4>Jonny Alvez</h4>
+            <p>Personal portfolio to a rockstar with animations.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="assets/crm-dashboard.png" alt="CRM website preview" />
+            <div class="project-overlay">
+              <span class="project-tag"> Web / Fullstack </span>
+              <button data-gallery>View details</button>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h4>Client Project — Custom CRM</h4>
+            <p>Real CRM built for sales teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRM MODAL -->
+    <div class="modal" id="galleryModal">
+      <div class="modal-overlay"></div>
+
+      <div class="modal-box crm-modal">
+        <header class="crm-header">
+          <div>
+            <span class="badge">Client Project</span>
+            <h3>Custom CRM System</h3>
+          </div>
+
+          <button class="close" aria-label="Close modal">×</button>
+        </header>
+
+        <section class="crm-body">
+          <p class="crm-description">
+            Custom CRM system developed for a real client to centralize lead
+            management, automate sales distribution and provide real-time
+            visibility for sales teams.
+          </p>
+
+          <ul class="crm-features">
+            <li>WordPress integration for automatic lead capture</li>
+            <li>Weighted lead distribution queue per salesperson</li>
+            <li>Kanban board for sales pipeline management</li>
+            <li>Real-time notifications using WebSockets</li>
+            <li>Reports and dashboards for performance tracking</li>
+          </ul>
+        </section>
+
+        <section class="crm-gallery">
+          <img src="assets/crm-client.png" alt="CRM client overview" />
+          <!-- o clique para o zoom n deveria ser aqui?  -->
+          <img src="assets/crm-dashboard.png" alt="CRM dashboard" />
+          <img src="assets/crm-kanban.png" alt="CRM kanban board" />
+          <img src="assets/crm-users.png" alt="CRM users management" />
+        </section>
+      </div>
+    </div>
+
+    <!-- IFRAME MODAL -->
+    <div class="modal" id="iframeModal">
+      <div class="modal-overlay"></div>
+
+      <div class="modal-box full">
+        <button class="close" aria-label="Close modal">×</button>
+        <iframe></iframe>
+      </div>
+    </div>
+
+    <!-- IMAGE ZOOM MODAL -->
+    <div class="modal" id="imageZoomModal">
+      <div class="modal-overlay"></div>
+
+      <div class="zoom-box">
+        <button class="close" aria-label="Close image">×</button>
+        <img id="zoomedImage" alt="Zoomed project image" />
+      </div>
+    </div>
+
+    <section class="section about">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-eyebrow">About me</span>
+
+          <h3>
+            I’m Iugor Sette,<br />
+            a software engineer focused on real-world products.
+          </h3>
+
+          <p>
+            I work as a <strong>Fullstack Software Engineer</strong> building
+            scalable, maintainable systems for real clients and businesses. My
+            experience ranges from modern front-end architectures to backend
+            systems focused on performance, reliability and long-term growth.
+          </p>
+
+          <p>
+            I’m especially comfortable working on
+            <strong>custom products</strong>, internal tools, CRMs, dashboards
+            and integrations where clean architecture and developer experience
+            really matter.
+          </p>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight">
+            <span class="highlight-number">+5</span>
+            <span class="highlight-label">Years building products</span>
+          </div>
+
+          <div class="highlight">
+            <span class="highlight-number">Fullstack</span>
+            <span class="highlight-label">Web & system architecture</span>
+          </div>
+
+          <div class="highlight">
+            <span class="highlight-number">PJ</span>
+            <span class="highlight-label">Available for contract work</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="cta-box">
+        <span class="section-eyebrow">Let’s work together</span>
+
+        <h3>
+          Need a software engineer who can
+          <span class="accent">own the product</span>?
+        </h3>
+
+        <p>
+          I work as a <strong>contract (PJ) software engineer</strong>, helping
+          companies design, build and scale real-world applications. From
+          architecture decisions to production delivery, I focus on long-term
+          maintainability, performance and business impact.
+        </p>
+
+        <p>
+          Ideal for startups, agencies or teams that need a senior-level
+          engineer without long hiring cycles.
+        </p>
+
+        <div class="cta-actions">
+          <a href="mailto:seuemail@email.com" class="btn primary">
+            Start a conversation
+          </a>
+
+          <a
+            href="https://wa.me/5531988071497"
+            target="_blank"
+            class="btn ghost">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Iugor Sette — Software Engineer</p>
+
+        <div class="footer-links">
+          <a href="https://wa.me/5531988071497" target="_blank"> WhatsApp </a>
+          <a href="mailto:seuemail@email.com"> Email </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  <header class="sticky-header" id="stickyHeader">
+    <div class="header-inner">
+      <strong class="logo">Iugor Sette</strong>
+
+      <nav class="header-nav">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="accent-link">Hire me</a>
+      </nav>
+    </div>
+  </header>
+</html>

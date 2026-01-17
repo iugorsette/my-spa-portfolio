@@ -77,19 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   /* =============================
-   * THEME TOGGLE
+   * THEME — SYSTEM FIRST
    * ============================= */
   const themeToggle = document.getElementById('themeToggle')
-
+  const prefersLight = window.matchMedia(
+    '(prefers-color-scheme: light)',
+  ).matches
   const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'light') {
-    document.body.classList.add('light')
-    themeToggle.checked = true
-  }
+
+  const isLight = savedTheme ? savedTheme === 'light' : prefersLight
+
+  document.body.classList.toggle('light', isLight)
+  themeToggle.checked = isLight
 
   themeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('light', themeToggle.checked)
-    localStorage.setItem('theme', themeToggle.checked ? 'light' : 'dark')
+    const light = themeToggle.checked
+    document.body.classList.toggle('light', light)
+    localStorage.setItem('theme', light ? 'light' : 'dark')
   })
 
   /* =============================

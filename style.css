@@ -264,6 +264,9 @@ body.light .sticky-header {
   transition: all 0.25s ease;
 }
 
+.white {
+  color: #fff !important;
+}
 .link {
   padding: 8px 16px;
   width: fit-content;

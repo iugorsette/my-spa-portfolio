@@ -132,27 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   /* =============================
-   * IFRAME MODAL
-   * ============================= */
-  const iframeModal = document.getElementById('iframeModal')
-  const iframe = iframeModal.querySelector('iframe')
-
-  document.querySelectorAll('[data-iframe]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      iframe.src = btn.dataset.iframe
-      iframeModal.classList.add('active')
-      document.body.classList.add('modal-open')
-    })
-  })
-
-  iframeModal.querySelector('.modal-overlay').onclick =
-    iframeModal.querySelector('.close').onclick = () => {
-      iframeModal.classList.remove('active')
-      iframe.src = ''
-      document.body.classList.remove('modal-open')
-    }
-
-  /* =============================
    * CRM MODAL
    * ============================= */
   const galleryModal = document.getElementById('galleryModal')

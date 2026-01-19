@@ -1,17 +1,25 @@
-export function initHeroCanvas() {
-  
-  /* HERO CANVAS */
+import { onIntersect } from '../core/observer.js'
 
-  const canvas = document.getElementById('heroCanvas')
+export function initCanvasBackgrounds() {
+  document.querySelectorAll('.with-canvas').forEach((section) => {
+    const canvas = section.querySelector('.bg-canvas')
+    if (!canvas) return
+
+    onIntersect(section, () => startCanvas(canvas, section))
+  })
+}
+
+function startCanvas(canvas, section) {
   const ctx = canvas.getContext('2d')
 
   let w, h
   function resize() {
-    w = canvas.width = window.innerWidth
-    h = canvas.height = window.innerHeight
+    w = canvas.width = section.offsetWidth
+    h = canvas.height = section.offsetHeight
   }
-  window.addEventListener('resize', resize)
+
   resize()
+  window.addEventListener('resize', resize)
 
   const dots = Array.from({ length: 80 }, () => ({
     x: Math.random() * w,
@@ -27,23 +35,8 @@ export function initHeroCanvas() {
     mouseX = e.clientX
     mouseY = e.clientY
   })
-  let heroVisible = true
-
-  const heroObserver = new IntersectionObserver(
-    ([entry]) => {
-      heroVisible = entry.isIntersecting
-    },
-    { threshold: 0.1 },
-  )
-
-  heroObserver.observe(document.querySelector('.hero'))
 
   function animate() {
-    if (!heroVisible) {
-      requestAnimationFrame(animate)
-      return
-    }
-
     ctx.clearRect(0, 0, w, h)
 
     dots.forEach((d) => {
@@ -68,43 +61,4 @@ export function initHeroCanvas() {
   }
 
   animate()
-
-  /* HERO PARALLAX + TRANSITION */
-
-  const hero = document.querySelector('.hero')
-  const heroContent = document.querySelector('.hero-content')
-  const heroOverlay = document.querySelector('.hero-overlay')
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY
-    const heroHeight = hero.offsetHeight
-    const progress = Math.min(scrollY / heroHeight, 1)
-
-    // Parallax layers
-    canvas.style.transform = `translateY(${scrollY * 0.25}px)`
-    heroOverlay.style.transform = `translateY(${scrollY * 0.15}px)`
-    heroContent.style.transform = `translateY(${scrollY * 0.35}px)`
-    heroContent.style.opacity = `${1 - progress * 1.1}`
-
-    // suavemente "apaga" o glow
-    heroOverlay.style.opacity = `${1 - progress * 1.2}`
-  })
-
-  /* PROJECTS FADE-IN (Intersection)  */
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible')
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.15 },
-  )
-
-  document.querySelectorAll('.project-card').forEach((card) => {
-    observer.observe(card)
-  })
 }

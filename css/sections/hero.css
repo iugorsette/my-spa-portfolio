@@ -90,3 +90,9 @@
     font-size: 2.4rem;
   }
 }
+
+.hero-parallax .bg-canvas,
+.hero-parallax .hero-overlay,
+.hero-parallax .hero-content {
+  will-change: transform, opacity;
+}

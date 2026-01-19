@@ -1,0 +1,151 @@
+/* ===== BACKGROUND HERO STYLE ===== */
+.tech-bg {
+  position: relative;
+  overflow: hidden;
+}.tech-expertise {
+  min-height: 100vh;
+}
+
+
+.tech-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      800px 400px at 10% 10%,
+      rgba(94, 234, 212, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 350px at 90% 80%,
+      rgba(94, 234, 212, 0.08),
+      transparent 65%
+    );
+  z-index: 0;
+}
+
+.tech-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.4)
+  );
+  z-index: 0;
+}
+
+/* ===== CONTAINER ===== */
+.tech-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px;
+  text-align: left;
+}
+
+/* ===== GRID ===== */
+.tech-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* ===== CARD ===== */
+.tech-card {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(94, 234, 212, 0.45);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+.tech-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* ===== WIDE ===== */
+.tech-card-wide {
+  grid-column: span 2;
+}
+
+/* ===== LIST ===== */
+.tech-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.tech-list li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.tech-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  top: 2px;
+}
+
+.tech-list.inline {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-card-wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-container {
+    padding: 80px 20px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-card-wide {
+    grid-column: span 1;
+  }
+}

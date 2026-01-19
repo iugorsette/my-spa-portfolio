@@ -1,0 +1,25 @@
+/* section base */
+.with-canvas {
+  position: relative;
+  overflow: hidden;
+}
+
+/* canvas */
+.bg-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* pseudo effects */
+.tech-bg::before,
+.tech-bg::after {
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* conteúdo */
+.with-canvas > *:not(canvas) {
+  position: relative;
+  z-index: 2;
+}

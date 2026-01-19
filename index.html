@@ -55,11 +55,13 @@
     <link rel="stylesheet" href="css/components/modal.css" />
     <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/components/card.css" />
+    <link rel="stylesheet" href="css/components/canvas.css" />
     <link rel="stylesheet" href="css/sections/hero.css" />
     <link rel="stylesheet" href="css/sections/projects.css" />
     <link rel="stylesheet" href="css/sections/about.css" />
     <link rel="stylesheet" href="css/sections/cta.css" />
     <link rel="stylesheet" href="css/sections/footer.css" />
+    <link rel="stylesheet" href="css/sections/tech-expertise.css" />
   </head>
   <body>
     <main>
@@ -73,8 +75,8 @@
         </div>
       </div>
       <!-- HERO -->
-      <section class="hero">
-        <canvas id="heroCanvas"></canvas>
+      <section class="hero with-canvas hero-parallax">
+        <canvas class="bg-canvas"></canvas>
 
         <div class="hero-overlay"></div>
 
@@ -299,6 +301,72 @@
         </div>
       </div>
 
+      <section
+        class="section tech-expertise tech-bg with-canvas"
+        id="tech-stack">
+        <canvas class="bg-canvas"></canvas>
+        <div class="tech-container">
+          <span class="section-eyebrow">Technical Expertise</span>
+          <h3 class="section-title">Core Technology Stack</h3>
+
+          <div class="tech-grid">
+            <div class="tech-card reveal">
+              <h4>Frontend Web</h4>
+              <p>
+                Scalable, component-driven web applications with focus on
+                performance and maintainability.
+              </p>
+              <ul class="tech-list">
+                <li><strong>Angular</strong> — enterprise-grade SPAs</li>
+                <li><strong>React</strong> — component architecture</li>
+                <li><strong>Vanilla JS</strong> — performance-first</li>
+                <li><strong>HTML5 / CSS3</strong></li>
+              </ul>
+            </div>
+
+            <div class="tech-card reveal">
+              <h4>Mobile Development</h4>
+              <p>Cross-platform mobile apps with shared business logic.</p>
+              <ul class="tech-list">
+                <li><strong>React Native</strong></li>
+                <li><strong>Flutter</strong></li>
+              </ul>
+            </div>
+
+            <div class="tech-card reveal">
+              <h4>Backend & APIs</h4>
+              <p>Secure and scalable backend services.</p>
+              <ul class="tech-list">
+                <li><strong>Node.js</strong></li>
+                <li><strong>NestJS</strong></li>
+                <li><strong>Spring Boot</strong></li>
+                <li><strong>.NET</strong></li>
+              </ul>
+            </div>
+
+            <div class="tech-card reveal">
+              <h4>Automation & Data</h4>
+              <p>Process automation and data extraction.</p>
+              <ul class="tech-list">
+                <li><strong>Puppeteer</strong></li>
+                <li><strong>Python</strong></li>
+              </ul>
+            </div>
+
+            <div class="tech-card tech-card-wide reveal">
+              <h4>Cloud & Infrastructure</h4>
+              <p>Cloud-native infrastructure and CI/CD pipelines.</p>
+              <ul class="tech-list inline">
+                <li><strong>Google Cloud Platform (GCP)</strong></li>
+                <li>CI/CD pipelines</li>
+                <li>Scalable deployments</li>
+                <li>Monitoring & observability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section cta">
         <div class="cta-box">
           <span class="section-eyebrow">Let’s work together</span>
@@ -361,6 +429,7 @@
         <nav class="header-nav">
           <a href="#projects">Projects</a>
           <a href="#about">About</a>
+          <a href="#tech-stack">Tech Stack</a>
           <a href="#contact" class="accent-link">Hire me</a>
         </nav>
       </div>

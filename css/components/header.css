@@ -1,0 +1,115 @@
+.sticky-header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 20;
+  background: rgba(11, 14, 20, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+body.light .sticky-header {
+  background: rgba(248, 250, 252, 0.7);
+}
+
+.sticky-header.visible {
+  transform: translateY(0);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.header-nav a:hover {
+  color: var(--accent);
+}
+
+.accent-link {
+  color: var(--accent);
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.top-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 16px;
+  z-index: 10;
+}
+
+#langToggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.theme-switch {
+  width: 52px;
+  height: 28px;
+  position: relative;
+}
+
+/* NÃO usar display:none */
+.theme-switch input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.theme-switch .slider {
+  position: absolute;
+  inset: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: background 0.3s;
+}
+
+.theme-switch .slider::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 2px;
+  left: 3px;
+  background: var(--accent);
+  border-radius: 50%;
+  transition: transform 0.35s ease;
+}
+
+/* estado checked */
+.theme-switch input:checked + .slider::before {
+  transform: translateX(24px);
+}

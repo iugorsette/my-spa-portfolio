@@ -1,0 +1,19 @@
+:root {
+  --bg: #0b0e14;
+  --bg-soft: #121722;
+  --card: #161b2b;
+  --text: #e6e8eb;
+  --muted: #9aa4bf;
+  --accent: #5eead4;
+  --border: #1f253a;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --bg-soft: #ffffff;
+  --card: #f1f5f9;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+}

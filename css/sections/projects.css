@@ -1,0 +1,113 @@
+
+.project-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0.9px) brightness(0.75);
+  transform: scale(1.08);
+  transition:
+    filter 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* remove blur no hover */
+.project-card:hover .project-thumb img {
+  filter: blur(0) brightness(1);
+  transform: scale(1.02);
+}
+
+/* ===== OVERLAY ===== */
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.15),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+/* CTA dentro do thumb */
+.project-overlay button {
+  align-self: flex-start;
+  background: var(--accent);
+  color: #020617;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(94, 234, 212, 0.3);
+  /* transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease; */
+}
+
+.project-overlay button:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 16px 40px rgba(94, 234, 212, 0.45);
+}
+
+/* ===== INFO ===== */
+
+.project-info {
+  padding: 20px 22px 24px;
+}
+
+.project-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.project-card button {
+  margin-top: 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    border-color 0.3s;
+}
+
+.project-card button:hover {
+  background: rgba(94, 234, 212, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}

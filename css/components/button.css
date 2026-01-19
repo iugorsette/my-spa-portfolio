@@ -1,0 +1,61 @@
+.btn {
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.white {
+  color: #fff !important;
+}
+.link {
+  padding: 8px 16px;
+  width: fit-content;
+  border-radius: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #020617;
+  box-shadow: 0 10px 30px rgba(94, 234, 212, 0.25);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(94, 234, 212, 0.35);
+}
+
+.btn.ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.link.ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: all 0.25s ease;
+}
+
+.link.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 16px 40px rgba(94, 234, 212, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.section {
+  padding: 100px 8%;
+}
+.section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}

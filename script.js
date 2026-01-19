@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =============================
    * HERO PARALLAX + TRANSITION
    * ============================= */
+  const hero = document.querySelector('.hero')
   const heroContent = document.querySelector('.hero-content')
   const heroOverlay = document.querySelector('.hero-overlay')
 

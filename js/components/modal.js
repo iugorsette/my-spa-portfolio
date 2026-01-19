@@ -5,13 +5,13 @@ export function initModals() {
   document.querySelectorAll('[data-gallery]').forEach((btn) => {
     btn.onclick = () => {
       galleryModal.classList.add('active')
-      document.body.classList.add('modal-open')
+      lockScroll()
     }
   })
 
   galleryModal.querySelector('.close').onclick = () => {
     galleryModal.classList.remove('active')
-    document.body.classList.remove('modal-open')
+    unlockScroll()
   }
 
   /* IMAGE ZOOM (CAPTURE MODE) */
@@ -26,7 +26,7 @@ export function initModals() {
 
       zoomedImage.src = img.src
       imageZoomModal.classList.add('active')
-      document.body.classList.add('modal-open')
+      lockScroll()
     },
     true,
   )
@@ -35,7 +35,7 @@ export function initModals() {
     imageZoomModal.querySelector('.close').onclick = () => {
       imageZoomModal.classList.remove('active')
       zoomedImage.src = ''
-      document.body.classList.remove('modal-open')
+      unlockScroll()
     }
 
   document.addEventListener('keydown', (e) => {
@@ -43,7 +43,21 @@ export function initModals() {
       imageZoomModal.classList.remove('active')
       galleryModal.classList.remove('active')
       iframeModal.classList.remove('active')
-      document.body.classList.remove('modal-open')
+      unlockScroll()
     }
   })
+
+  let scrollY = 0
+
+  function lockScroll() {
+    scrollY = window.scrollY
+    document.body.style.top = `-${scrollY}px`
+    document.body.classList.add('modal-open')
+  }
+
+  function unlockScroll() {
+    document.body.classList.remove('modal-open')
+    document.body.style.top = ''
+    window.scrollTo(0, scrollY)
+  }
 }

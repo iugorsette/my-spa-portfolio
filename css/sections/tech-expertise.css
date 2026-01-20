@@ -57,7 +57,7 @@
 
 /* ===== CARD ===== */
 .tech-card {
-  background: rgba(20, 20, 20, 0.7);
+  background: var(--card);
   backdrop-filter: blur(6px);
   border: 1px solid var(--border);
   border-radius: 20px;

@@ -38,11 +38,17 @@ body.light .sticky-header {
 }
 
 .header-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   color: var(--muted);
   text-decoration: none;
   font-size: 0.9rem;
 }
-
+.header-nav .icon {
+  display: none;
+  font-size: 1.2rem;
+}
 .header-nav a:hover {
   color: var(--accent);
 }
@@ -112,4 +118,78 @@ body.light .sticky-header {
 /* estado checked */
 .theme-switch input:checked + .slider::before {
   transform: translateX(24px);
+}
+.desktop-only {
+  display: block;
+}
+
+.header-nav a.active {
+  color: var(--accent);
+}
+
+.header-nav a.active .icon {
+  transform: scale(1.15);
+}
+.header-nav a:hover .nav-icon {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease,
+    opacity 0.35s ease;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  .header-inner {
+    justify-content: center;
+  }
+
+  .header-nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .header-nav .label {
+    display: none;
+  }
+
+  .header-nav .icon {
+    display: inline-flex;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.header-nav a.active {
+  color: var(--accent);
+}
+
+.header-nav a.active .nav-icon {
+  transform: scale(1.2);
+  animation: navPulse 0.45s ease;
+}
+
+@keyframes navPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }

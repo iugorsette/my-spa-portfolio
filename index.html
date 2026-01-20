@@ -66,16 +66,53 @@
   <body>
     <header class="sticky-header" id="stickyHeader">
       <div class="header-inner">
-        <strong class="logo">Iugor Sette</strong>
+        <strong class="logo desktop-only">Iugor Sette</strong>
 
         <nav class="header-nav">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#tech-stack">Tech Stack</a>
-          <a href="#contact" class="accent-link">Hire me</a>
+          <a href="#about" data-section="about" aria-label="About">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+            </svg>
+            <span class="label">About</span>
+          </a>
+
+          <a href="#projects" data-section="projects" aria-label="Projects">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+            <span class="label">Projects</span>
+          </a>
+
+          <a
+            href="#tech-stack"
+            data-section="tech-stack"
+            aria-label="Tech stack">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2l3 5-3 5-3-5z" />
+              <rect x="4" y="14" width="16" height="8" rx="2" />
+            </svg>
+            <span class="label">Stack</span>
+          </a>
+
+          <a
+            href="#contact"
+            data-section="contact"
+            class="accent-link"
+            aria-label="Hire me">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+            </svg>
+            <span class="label">Hire</span>
+          </a>
         </nav>
       </div>
     </header>
+
     <main>
       <!-- TOP CONTROLS -->
       <div class="top-controls">
@@ -446,7 +483,7 @@
         </div>
       </section>
 
-      <section class="section cta">
+      <section class="section cta" id="contact">
         <div class="cta-box">
           <span class="section-eyebrow">Let’s work together</span>
 
@@ -486,7 +523,7 @@
       </section>
     </main>
 
-    <footer class="footer" id="contact">
+    <footer class="footer">
       <div class="footer-inner">
         <p>© <span id="year"></span> Iugor Sette — Software Engineer</p>
 

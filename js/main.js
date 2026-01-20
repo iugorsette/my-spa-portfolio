@@ -6,6 +6,7 @@ import { initTheme } from './features/theme.js'
 import { initCanvasBackgrounds } from './features/hero-canvas.js'
 import { initReveal } from './core/observer.js'
 import { initHeroParallax } from './features/hero-parallax.js'
+import { initSpyScroll } from './features/spy-scroll.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('year').textContent = new Date().getFullYear()
@@ -18,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme()
   initCanvasBackgrounds()
   initHeroParallax()
+  initSpyScroll()
 })

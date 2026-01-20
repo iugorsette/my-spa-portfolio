@@ -79,46 +79,6 @@ body.light .sticky-header {
   padding: 6px 10px;
   border-radius: 6px;
 }
-.theme-switch {
-  width: 52px;
-  height: 28px;
-  position: relative;
-}
-
-/* NÃO usar display:none */
-.theme-switch input {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.theme-switch .slider {
-  position: absolute;
-  inset: 0;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  transition: background 0.3s;
-}
-
-.theme-switch .slider::before {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  top: 2px;
-  left: 3px;
-  background: var(--accent);
-  border-radius: 50%;
-  transition: transform 0.35s ease;
-}
-
-/* estado checked */
-.theme-switch input:checked + .slider::before {
-  transform: translateX(24px);
-}
 .desktop-only {
   display: block;
 }

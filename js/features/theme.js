@@ -1,6 +1,7 @@
 export function initTheme() {
   /* THEME — SYSTEM FIRST */
   const themeToggle = document.getElementById('themeToggle')
+  if (!themeToggle) return
   const prefersLight = window.matchMedia(
     '(prefers-color-scheme: light)',
   ).matches

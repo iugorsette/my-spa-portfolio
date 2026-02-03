@@ -7,10 +7,10 @@ import { initCanvasBackgrounds } from './features/hero-canvas.js'
 import { initReveal } from './core/observer.js'
 import { initHeroParallax } from './features/hero-parallax.js'
 import { initSpyScroll } from './features/spy-scroll.js'
+import { initI18n } from './features/i18n.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('year').textContent = new Date().getFullYear()
-
+  initI18n()
   initReveal()
   initStickyHeader()
   initSmoothScroll()

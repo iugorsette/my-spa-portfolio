@@ -39,9 +39,16 @@ export const translations = {
     'projects.tag.webfullstack': 'Web / Fullstack',
     'projects.viewProject': 'Ver projeto',
     'projects.viewDetails': 'Ver detalhes',
+    'projects.genutri.desc':
+      'SaaS para nutricionistas com gestão de pacientes, pré-consulta, planos alimentares, agenda e portal do paciente.',
+    'projects.genutri.alt': 'Preview do Genutri.app',
     'projects.energyfit.desc':
       'Landing page focada em UX e performance para um box de crosstrainer.',
     'projects.energyfit.alt': 'Preview do site Energy Fit',
+    'projects.blog.title': 'Blog da Nutricionista',
+    'projects.blog.desc':
+      'Site institucional e blog em Astro + MDX para nutricionista, com foco em conteúdo, SEO e captação de pacientes.',
+    'projects.blog.alt': 'Preview do site nutrirenata.com',
     'projects.jonny.desc': 'Portfólio pessoal para um rockstar com animações.',
     'projects.jonny.alt': 'Preview do site Jonny Alvez',
     'projects.crm.title': 'Projeto de Cliente — CRM Personalizado',
@@ -170,9 +177,16 @@ export const translations = {
     'projects.tag.webfullstack': 'Web / Fullstack',
     'projects.viewProject': 'View Project',
     'projects.viewDetails': 'View details',
+    'projects.genutri.desc':
+      'SaaS for nutritionists with patient management, pre-consultation flows, meal plans, scheduling and a patient portal.',
+    'projects.genutri.alt': 'Genutri.app preview',
     'projects.energyfit.desc':
       'Landing page focused on UX & performance to a crosstrainer box.',
     'projects.energyfit.alt': 'Energy Fit website preview',
+    'projects.blog.title': 'Nutritionist Blog',
+    'projects.blog.desc':
+      'Institutional website and Astro + MDX blog for a nutritionist, focused on content, SEO and patient acquisition.',
+    'projects.blog.alt': 'nutrirenata.com website preview',
     'projects.jonny.desc': 'Personal portfolio to a rockstar with animations.',
     'projects.jonny.alt': 'Jonny Alvez website preview',
     'projects.crm.title': 'Client Project — Custom CRM',

@@ -111,3 +111,43 @@
   border-color: var(--accent);
   transform: translateY(-2px);
 }
+
+@media (hover: none), (pointer: coarse) {
+  .project-thumb img {
+    filter: blur(0) brightness(1);
+    transform: none;
+    transition: none;
+  }
+
+  .project-card:hover .project-thumb img {
+    filter: blur(0) brightness(1);
+    transform: none;
+  }
+
+  .project-overlay {
+    opacity: 1;
+    padding: 16px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.22),
+      transparent
+    );
+    transition: none;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .project-overlay button,
+  .project-overlay a {
+    transform: none;
+  }
+
+  .project-card button:hover,
+  .project-overlay button:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(94, 234, 212, 0.3);
+  }
+}

@@ -15,10 +15,22 @@ h1, h2, h3, h4 {
   font-family: 'Space Grotesk', sans-serif;
 }
 
+html.modal-open {
+  overflow: hidden;
+}
+
 body.modal-open {
   position: fixed;
+  left: 0;
+  right: 0;
   width: 100%;
   overflow: hidden;
+}
+
+body.modal-open .sticky-header,
+body.modal-open .top-controls {
+  opacity: 0;
+  pointer-events: none;
 }
 
 

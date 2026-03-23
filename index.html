@@ -531,18 +531,50 @@
         <div class="modal-overlay"></div>
 
         <div class="zoom-box">
-          <button
-            class="close"
-            data-i18n-key="image.close"
-            data-i18n-attr="aria-label"
-            aria-label="Fechar imagem">
-            ×
-          </button>
-          <img
-            id="zoomedImage"
-            data-i18n-key="image.alt"
-            data-i18n-attr="alt"
-            alt="Imagem ampliada do projeto" />
+          <div class="zoom-nav-group">
+            <button
+              class="zoom-nav"
+              type="button"
+              data-zoom-prev
+              data-i18n-key="image.previous"
+              data-i18n-attr="aria-label"
+              aria-label="Imagem anterior">
+              ‹
+            </button>
+          </div>
+
+          <div class="zoom-stage">
+            <button
+              class="close"
+              data-i18n-key="image.close"
+              data-i18n-attr="aria-label"
+              aria-label="Fechar imagem">
+              ×
+            </button>
+            <div class="zoom-viewport" id="zoomViewport">
+              <img
+                id="zoomedImage"
+                data-i18n-key="image.alt"
+                data-i18n-attr="alt"
+                alt="Imagem ampliada do projeto" />
+            </div>
+            <div class="zoom-meta">
+              <p class="zoom-caption" id="zoomCaption"></p>
+              <span class="zoom-counter" id="zoomCounter"></span>
+            </div>
+          </div>
+
+          <div class="zoom-nav-group">
+            <button
+              class="zoom-nav"
+              type="button"
+              data-zoom-next
+              data-i18n-key="image.next"
+              data-i18n-attr="aria-label"
+              aria-label="Próxima imagem">
+              ›
+            </button>
+          </div>
         </div>
       </div>
 

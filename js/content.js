@@ -20,6 +20,12 @@ export const translations = {
       'Construindo <span class="accent">Produtos escaláveis</span><br />para negócios reais',
     'hero.description':
       'Engenheiro fullstack com experiência entregando sistemas prontos para produção, ferramentas internas e plataformas sob medida para clientes reais.',
+    'manifesto.eyebrow': 'Como eu trabalho',
+    'manifesto.line1': 'Eu não entrego telas.',
+    'manifesto.line2':
+      'Entrego sistemas que continuam de pé quando o negócio cresce.',
+    'manifesto.line3':
+      'Arquitetura limpa, <span class="accent">performance real</span> e responsabilidade de ponta a ponta.',
     'about.eyebrow': 'Sobre mim',
     'about.title':
       'Eu sou Iugor Sette,<br />um engenheiro de software focado em produtos do mundo real.',
@@ -160,6 +166,12 @@ export const translations = {
       'Building <span class="accent">Scalable</span><br />Products for Real Businesses',
     'hero.description':
       'Fullstack engineer with experience delivering production-ready systems, internal tools and custom platforms for real clients.',
+    'manifesto.eyebrow': 'How I work',
+    'manifesto.line1': 'I don’t ship screens.',
+    'manifesto.line2':
+      'I ship systems that keep standing as the business grows.',
+    'manifesto.line3':
+      'Clean architecture, <span class="accent">real performance</span> and end-to-end ownership.',
     'about.eyebrow': 'About me',
     'about.title':
       'I’m Iugor Sette,<br />a software engineer focused on real-world products.',

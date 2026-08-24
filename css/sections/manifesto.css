@@ -1,0 +1,93 @@
+.manifesto {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 120px 8%;
+  overflow: hidden;
+}
+
+/* Mesmo glow do hero, mais discreto, pra costurar as duas seções. */
+.manifesto::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    800px circle at 20% 30%,
+    rgba(94, 234, 212, 0.08),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+body.light .manifesto::before {
+  background: radial-gradient(
+    800px circle at 20% 30%,
+    rgba(37, 99, 235, 0.07),
+    transparent 62%
+  );
+}
+
+.manifesto-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.manifesto-line {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.7rem, 4.4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  max-width: 900px;
+}
+
+.manifesto-line + .manifesto-line {
+  margin-top: 0.4em;
+}
+
+.manifesto-line .accent {
+  color: var(--accent);
+}
+
+.manifesto-progress {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 44px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+/* Sem GSAP (ou com prefers-reduced-motion) a barra mediria um scroll que não
+   está sendo consumido — então ela só existe junto da animação. */
+.manifesto:not(.is-animated) .manifesto-progress {
+  display: none;
+}
+
+.manifesto-progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* Sem pin no mobile: a seção rola normal, então não precisa de altura cheia
+   nem da barra de progresso (que mediria um scroll que não existe). */
+@media (max-width: 768px) {
+  .manifesto {
+    min-height: auto;
+    padding: 90px 8%;
+  }
+
+  .manifesto-progress {
+    display: none;
+  }
+}

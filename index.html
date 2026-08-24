@@ -66,8 +66,10 @@
     <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/components/card.css" />
     <link rel="stylesheet" href="css/components/canvas.css" />
+    <link rel="stylesheet" href="css/components/split-text.css" />
     <link rel="stylesheet" href="css/components/theme.css" />
     <link rel="stylesheet" href="css/sections/hero.css" />
+    <link rel="stylesheet" href="css/sections/manifesto.css" />
     <link rel="stylesheet" href="css/sections/projects.css" />
     <link rel="stylesheet" href="css/sections/about.css" />
     <link rel="stylesheet" href="css/sections/cta.css" />
@@ -209,6 +211,28 @@
         </div>
       </section>
 
+      <!-- MANIFESTO (sub-intro animada: pin + scrub) -->
+      <section class="manifesto" aria-label="Como eu trabalho">
+        <div class="manifesto-inner">
+          <span class="section-eyebrow" data-i18n="manifesto.eyebrow">
+            Como eu trabalho
+          </span>
+
+          <p class="manifesto-line" data-i18n-html="manifesto.line1">
+            Eu não entrego telas.
+          </p>
+          <p class="manifesto-line" data-i18n-html="manifesto.line2">
+            Entrego sistemas que continuam de pé quando o negócio cresce.
+          </p>
+          <p class="manifesto-line" data-i18n-html="manifesto.line3">
+            Arquitetura limpa, <span class="accent">performance real</span> e
+            responsabilidade de ponta a ponta.
+          </p>
+        </div>
+
+        <div class="manifesto-progress" aria-hidden="true"><span></span></div>
+      </section>
+
       <section class="section about" id="about">
         <div class="about-grid">
           <div class="about-text">
@@ -244,7 +268,12 @@
 
           <div class="about-highlights">
             <div class="highlight">
-              <span class="highlight-number">+5</span>
+              <span
+                class="highlight-number"
+                data-count="5"
+                data-count-prefix="+">
+                +5
+              </span>
               <span class="highlight-label" data-i18n="about.highlight.years">
                 Anos construindo produtos
               </span>
@@ -779,6 +808,14 @@
         </div>
       </div>
     </footer>
+    <!-- GSAP + ScrollTrigger: sem build step, entram como globais.
+         defer garante que rodem antes do módulo abaixo. -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

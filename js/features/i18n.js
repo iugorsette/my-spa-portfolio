@@ -97,6 +97,10 @@ function applyTranslations(lang) {
 
   updateMeta(lang)
   updateYear()
+
+  // Reescrever innerHTML apaga qualquer DOM montado sobre o texto (ex.: os spans
+  // de palavra das animações de scroll). Quem depende disso remonta aqui.
+  document.dispatchEvent(new CustomEvent('i18n:change', { detail: { lang } }))
 }
 
 export function initI18n() {

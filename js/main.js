@@ -7,6 +7,7 @@ import { initReveal } from './core/observer.js'
 import { initHeroParallax } from './features/hero-parallax.js'
 import { initSpyScroll } from './features/spy-scroll.js'
 import { initI18n } from './features/i18n.js'
+import { initScrollAnimations } from './features/scroll-animations.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   initI18n()
@@ -18,4 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvasBackgrounds()
   initHeroParallax()
   initSpyScroll()
+  // por último: o pin do ScrollTrigger mede a página e mexe no layout.
+  initScrollAnimations()
 })

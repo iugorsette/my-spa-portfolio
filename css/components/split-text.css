@@ -1,0 +1,30 @@
+/* Base das palavras geradas por js/features/scroll-animations.js */
+
+/* transform não se aplica a inline não substituído — daí o inline-block. */
+.word {
+  display: inline-block;
+}
+
+/* Máscara por palavra: o reveal desliza de baixo pra cima dentro dela.
+   O par padding/margin negativo devolve o espaço dos descendentes (g, p, y),
+   que o overflow:hidden cortaria. */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+
+/* Estado inicial apagado. Fica atrás de .is-animated, que só é adicionada
+   quando o GSAP realmente assumiu a seção: sem JS, ou com
+   prefers-reduced-motion, o texto nasce legível. */
+.manifesto.is-animated .word {
+  opacity: 0.12;
+  will-change: opacity, transform;
+}
+
+.about-text p.is-animated .word {
+  opacity: 0.18;
+  will-change: opacity;
+}

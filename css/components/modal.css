@@ -70,19 +70,30 @@
 }
 
 .crm-modal {
+  display: flex;
+  flex-direction: column;
   width: min(94vw, 1080px);
   background: var(--bg-soft);
+  overflow: hidden;
 }
 
 .crm-header {
-  position: relative;
   display: flex;
+  flex: 0 0 auto;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   padding: 26px 30px 22px;
   border-bottom: 1px solid var(--border);
   background: var(--bg-soft);
+}
+
+.crm-modal-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .crm-header h3 {
@@ -139,6 +150,115 @@
   border-bottom: 1px solid var(--border);
 }
 
+.crm-architecture {
+  padding: 22px 30px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 52%, var(--bg-soft));
+}
+
+.crm-architecture-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.crm-architecture-heading h4 {
+  margin-top: 6px;
+  font-size: 1.05rem;
+}
+
+.crm-architecture-tag {
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.crm-architecture-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1.1fr) 24px minmax(0, 1fr);
+  align-items: start;
+  gap: 8px;
+}
+
+.crm-architecture-node {
+  display: flex;
+  min-width: 0;
+  min-height: 86px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+.crm-architecture-node > span {
+  color: var(--muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.crm-architecture-node strong {
+  font-size: 0.94rem;
+}
+
+.crm-architecture-node small {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.crm-architecture-api {
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  background: color-mix(in srgb, var(--accent) 6%, var(--card));
+}
+
+.crm-architecture-arrow {
+  align-self: start;
+  margin-top: 34px;
+  color: var(--accent);
+  text-align: center;
+}
+
+.crm-architecture-api-stack {
+  display: grid;
+  grid-column: 3;
+  justify-items: stretch;
+  gap: 8px;
+}
+
+.crm-architecture-connection {
+  justify-self: center;
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.crm-architecture-frontend {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 17px;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 6%, var(--card));
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.crm-architecture-frontend strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
 .crm-overview,
 .crm-capabilities {
   min-width: 0;
@@ -157,31 +277,6 @@
   line-height: 1.7;
   color: var(--muted);
   max-width: 62ch;
-}
-
-.crm-facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.crm-facts div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card);
-}
-
-.crm-facts strong {
-  font-size: 0.95rem;
-}
-
-.crm-facts span {
-  color: var(--muted);
-  font-size: 0.7rem;
 }
 
 .crm-features {
@@ -242,6 +337,203 @@
   padding: 10px 12px;
   color: var(--muted);
   font-size: 0.76rem;
+}
+
+.genutri-modal {
+  display: flex;
+  flex-direction: column;
+  width: min(94vw, 980px);
+  overflow: hidden;
+}
+
+.genutri-header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 26px 30px 22px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.genutri-header h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  line-height: 1.15;
+}
+
+.genutri-header p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.genutri-header .close {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  line-height: 1;
+}
+
+.genutri-body {
+  display: grid;
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: 22px;
+  padding: 26px 30px 30px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.genutri-overview p {
+  max-width: 78ch;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.genutri-architecture {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--bg) 58%, var(--bg-soft));
+}
+
+.genutri-architecture-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.genutri-architecture-heading h4 {
+  margin-top: 6px;
+  font-size: 1.1rem;
+}
+
+.genutri-architecture-tag {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.architecture-flow {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.architecture-node {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: min(100%, 520px);
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+.architecture-node > span,
+.architecture-deploy > span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.architecture-node strong,
+.architecture-deploy strong {
+  font-size: 0.9rem;
+}
+
+.architecture-node small {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.architecture-node-primary {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent) 6%, var(--card));
+}
+
+.architecture-connector {
+  color: var(--accent);
+  line-height: 1;
+}
+
+.architecture-integrations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 520px);
+}
+
+.architecture-integrations .architecture-node {
+  width: 100%;
+}
+
+.architecture-deploy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 9px;
+}
+
+.genutri-decision-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.genutri-decision-list li {
+  position: relative;
+  padding: 12px 12px 12px 30px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  color: var(--text);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.genutri-decision-list li::before {
+  position: absolute;
+  left: 12px;
+  color: var(--accent);
+  content: '✓';
+  font-weight: 700;
+}
+
+.genutri-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.genutri-modal-footer > span {
+  max-width: 65ch;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
 .crm-gallery img:hover,
@@ -407,6 +699,10 @@
     padding: 20px 18px;
   }
 
+  .crm-architecture {
+    padding: 20px 18px;
+  }
+
   .crm-gallery {
     gap: 10px;
     padding: 16px 18px 20px;
@@ -416,21 +712,61 @@
     padding: 8px;
     font-size: 0.68rem;
   }
+
+  .genutri-header {
+    padding: 20px 18px 16px;
+  }
+
+  .genutri-body {
+    gap: 18px;
+    padding: 20px 18px;
+  }
+
+  .genutri-architecture {
+    padding: 16px;
+  }
 }
 
 @media (max-width: 480px) {
-  .crm-facts {
-    grid-template-columns: 1fr;
-  }
-
-  .crm-facts div {
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-
   .crm-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .crm-architecture-heading {
+    flex-direction: column;
+  }
+
+  .crm-architecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .crm-architecture-arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+    margin-top: 0;
+  }
+
+  .crm-architecture-api-stack {
+    grid-column: 1;
+  }
+
+  .crm-architecture-connection {
+    justify-self: center;
+  }
+
+  .crm-architecture-frontend {
+    width: 100%;
+  }
+
+  .genutri-decision-list,
+  .architecture-integrations {
+    grid-template-columns: 1fr;
+  }
+
+  .genutri-architecture-heading,
+  .genutri-modal-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 

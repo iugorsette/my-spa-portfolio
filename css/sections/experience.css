@@ -136,30 +136,6 @@
   content: '';
 }
 
-.experience-result {
-  display: grid;
-  grid-template-columns: 145px minmax(0, 1fr);
-  gap: 14px;
-  padding: 14px 16px;
-  border-left: 2px solid var(--accent);
-  border-radius: 0 10px 10px 0;
-  background: color-mix(in srgb, var(--accent) 7%, var(--bg));
-}
-
-.experience-result span {
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.experience-result p {
-  color: var(--text);
-  font-size: 0.82rem;
-  line-height: 1.5;
-}
-
 .experience-tags {
   display: flex;
   flex-wrap: wrap;
@@ -209,11 +185,6 @@
 
   .experience-employment {
     align-self: flex-start;
-  }
-
-  .experience-result {
-    grid-template-columns: 1fr;
-    gap: 6px;
   }
 
   .experience-card {

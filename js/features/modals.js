@@ -1,5 +1,6 @@
 export function initModals() {
   const galleryModal = document.getElementById('galleryModal')
+  const genutriModal = document.getElementById('genutriModal')
   const imageZoomModal = document.getElementById('imageZoomModal')
   const iframeModal = document.getElementById('iframeModal')
   const zoomedImage = document.getElementById('zoomedImage')
@@ -108,7 +109,7 @@ export function initModals() {
     modal.classList.add('active')
     modal.setAttribute('aria-hidden', 'false')
     lockScroll()
-    requestAnimationFrame(() => modal.querySelector('.close')?.focus())
+    requestAnimationFrame(() => modal.querySelector('.close')?.focus({ preventScroll: true }))
   }
 
   const closeModal = (modal) => {
@@ -184,7 +185,11 @@ export function initModals() {
     button.addEventListener('click', () => openModal(galleryModal))
   })
 
-  ;[galleryModal, imageZoomModal, iframeModal].forEach((modal) => {
+  document.querySelectorAll('[data-genutri-details]').forEach((button) => {
+    button.addEventListener('click', () => openModal(genutriModal))
+  })
+
+  ;[galleryModal, genutriModal, imageZoomModal, iframeModal].forEach((modal) => {
     if (!modal) return
 
     modal.querySelectorAll('.close, .modal-overlay').forEach((element) => {
@@ -283,6 +288,11 @@ export function initModals() {
 
       if (galleryModal?.classList.contains('active')) {
         closeModal(galleryModal)
+        return
+      }
+
+      if (genutriModal?.classList.contains('active')) {
+        closeModal(genutriModal)
         return
       }
 

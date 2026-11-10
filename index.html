@@ -343,12 +343,9 @@
                 <li data-i18n="experience.smart.point3">Participação em decisões de arquitetura frontend, padrões reutilizáveis, desempenho e manutenção da plataforma.</li>
                 <li data-i18n="experience.smart.point4">Testes unitários e CI/CD, contribuindo para cobertura próxima de 80%; participação no deploy, monitoramento e operação em Firebase e GCP.</li>
                 <li data-i18n="experience.smart.point5">Uso estruturado de IA no fluxo de engenharia para investigação, implementação, testes e documentação, com validação técnica das entregas.</li>
+                <li data-i18n="experience.smart.point6">Entrega de funcionalidades como gerenciador de imóveis com Kanban, gamificação e assinatura digital para contratos de cotização.</li>
               </ul>
-              <div class="experience-result">
-                <span data-i18n="experience.deliveries">Entregas em destaque</span>
-                <p data-i18n="experience.smart.result">Gerenciador de imóveis com Kanban, módulo de gamificação e fluxo de assinatura digital para contratos de cotização.</p>
-              </div>
-            <ul class="experience-tags" data-i18n-key="experience.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias utilizadas">
+              <ul class="experience-tags" data-i18n-key="experience.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias utilizadas">
                 <li>Angular</li><li>TypeScript</li><li>RxJS</li><li>NgRx</li><li>NestJS</li><li>MongoDB</li><li>GCP</li>
               </ul>
             </article>
@@ -370,15 +367,11 @@
               </header>
               <p class="experience-summary" data-i18n="experience.contaja.summary">Desenvolvimento de sistemas e automações para processos fiscais e contábeis em uma plataforma utilizada por milhares de empresas.</p>
               <ul class="experience-points">
-                <li data-i18n="experience.contaja.point1">Automação de rotinas fiscais em Python; em um processo, reduzi o tempo de cerca de sete dias para poucas horas.</li>
+                <li data-i18n="experience.contaja.point1">Automação de rotinas fiscais em Python; em um fluxo, reduzi o tempo de execução de cerca de sete dias para poucas horas.</li>
                 <li data-i18n="experience.contaja.point2">Implementação de APIs e integrações com serviços governamentais para consultas e operações fiscais.</li>
                 <li data-i18n="experience.contaja.point3">Desenvolvimento de serviços e integrações REST e GraphQL, com modelagem de dados em PostgreSQL e MongoDB.</li>
                 <li data-i18n="experience.contaja.point4">Desenvolvimento frontend em Angular e React, além de automação de processos com TypeScript, Puppeteer e Docker.</li>
               </ul>
-              <div class="experience-result">
-                <span data-i18n="experience.impact">Impacto</span>
-                <p data-i18n="experience.contaja.result">Redução expressiva do tempo de execução de rotinas fiscais, liberando a equipe de tarefas manuais repetitivas.</p>
-              </div>
               <ul class="experience-tags" data-i18n-key="experience.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias utilizadas">
                 <li>Python</li><li>TypeScript</li><li>Angular</li><li>Node.js</li><li>REST &amp; GraphQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Docker</li>
               </ul>
@@ -410,14 +403,6 @@
                   <span class="project-kicker" data-i18n="projects.genutri.kicker">Produto digital</span>
                   <h4>Genutri.app</h4>
                 </div>
-                <a
-                  href="https://genutri.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-action">
-                  <span data-i18n="projects.viewProject">Acessar produto</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
               </div>
               <p data-i18n="projects.genutri.desc">
                 SaaS que centraliza pacientes, avaliações, planos alimentares e
@@ -425,8 +410,16 @@
                 fullstack e nas integrações da plataforma.
               </p>
               <ul class="project-tech" data-i18n-key="projects.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias do produto">
-                <li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Stripe</li>
+                <li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL</li><li>Stripe</li><li>Vercel</li>
               </ul>
+              <div class="project-actions">
+                <button class="project-action" type="button" data-genutri-details aria-haspopup="dialog" aria-controls="genutriModal">
+                  <span data-i18n="projects.genutri.architecture">Ver case de arquitetura</span><span aria-hidden="true">↗</span>
+                </button>
+                <a href="https://genutri.app/" target="_blank" rel="noopener noreferrer" class="project-action project-action-secondary">
+                  <span data-i18n="projects.viewProject">Acessar produto</span><span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -449,10 +442,6 @@
                   <span class="project-kicker" data-i18n="projects.crm.kicker">Projeto para cliente</span>
                   <h4 data-i18n="projects.crm.title">Acreditt — CRM de Gestão Comercial</h4>
                 </div>
-                <button class="project-action" type="button" data-gallery aria-haspopup="dialog" aria-controls="galleryModal">
-                  <span data-i18n="projects.viewDetails">Ver detalhes</span>
-                  <span aria-hidden="true">↗</span>
-                </button>
               </div>
               <p data-i18n="projects.crm.desc">
                 CRM que centraliza leads e negociações da Acreditt. Reúne pipeline
@@ -460,8 +449,14 @@
                 atendendo uma equipe com mais de cinco usuários ativos.
               </p>
               <ul class="project-tech" data-i18n-key="projects.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias do produto">
-                <li>Angular</li><li>NestJS</li><li>MongoDB</li><li>WebSockets</li>
+                <li>Angular</li><li>NestJS</li><li>MongoDB</li><li>WebSockets</li><li>Railway</li><li>Vercel</li>
               </ul>
+              <div class="project-actions">
+                <button class="project-action" type="button" data-gallery aria-haspopup="dialog" aria-controls="galleryModal">
+                  <span data-i18n="projects.crm.architecture">Ver case de arquitetura</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -477,7 +472,7 @@
             <div>
               <span class="badge" data-i18n="crm.badge">Projeto de Cliente</span>
               <h3 id="crmModalTitle" data-i18n="crm.title">Sistema CRM Personalizado</h3>
-              <p class="crm-header-caption" data-i18n="crm.headerCaption">CRM de vendas • Acreditt</p>
+              <p class="crm-header-caption" data-i18n="crm.headerCaption">CRM comercial • Acreditt</p>
             </div>
 
             <button
@@ -490,19 +485,49 @@
             </button>
           </header>
 
+          <div class="crm-modal-content">
+          <section class="crm-architecture" aria-labelledby="crmArchitectureTitle">
+            <div class="crm-architecture-heading">
+              <div>
+                <span class="crm-section-label" data-i18n="crm.architecture.label">Visão da arquitetura</span>
+                <h4 id="crmArchitectureTitle" data-i18n="crm.architecture.title">Captura de leads e gestão comercial em tempo real</h4>
+              </div>
+              <span class="crm-architecture-tag" data-i18n="crm.architecture.backendHost">Backend · Railway</span>
+            </div>
+            <div class="crm-architecture-flow" data-i18n-key="crm.architecture.flowLabel" data-i18n-attr="aria-label" aria-label="Fluxo do CRM Acreditt">
+              <div class="crm-architecture-node">
+                <span data-i18n="crm.architecture.source">Entrada de leads</span>
+                <strong>WordPress</strong>
+              </div>
+              <span class="crm-architecture-arrow" aria-hidden="true">→</span>
+              <div class="crm-architecture-api-stack">
+                <div class="crm-architecture-node crm-architecture-api">
+                  <span data-i18n="crm.architecture.backend">Backend · Railway</span>
+                  <strong>NestJS</strong>
+                  <small>REST API · WebSockets</small>
+                </div>
+                <span class="crm-architecture-connection" aria-hidden="true">↓</span>
+                <div class="crm-architecture-frontend">
+                  <span class="crm-section-label" data-i18n="crm.architecture.frontendLabel">Aplicação web · Deploy na Vercel</span>
+                  <strong>Angular SPA</strong>
+                  <span data-i18n="crm.architecture.frontendConnection">Conectada ao backend NestJS pela API REST e por WebSockets.</span>
+                </div>
+              </div>
+              <span class="crm-architecture-arrow" aria-hidden="true">→</span>
+              <div class="crm-architecture-node">
+                <span data-i18n="crm.architecture.data">Banco de dados</span>
+                <strong>MongoDB</strong>
+              </div>
+            </div>
+          </section>
+
           <section class="crm-body">
             <div class="crm-overview">
               <div>
                 <span class="crm-section-label" data-i18n="crm.overviewLabel">Visão geral</span>
                 <p class="crm-description" data-i18n="crm.description">
-                  CRM desenvolvido para a operação comercial da Acreditt, centralizando
-                  leads, negociações e acompanhamento de vendas em uma única plataforma.
+                  CRM desenvolvido para a Acreditt. Recebe leads do WordPress e apoia o acompanhamento das negociações da equipe comercial, com pipeline de vendas, gestão de acessos, dashboards e atualizações em tempo real.
                 </p>
-              </div>
-              <div class="crm-facts">
-                <div><strong>5+</strong><span data-i18n="crm.fact.users">usuários ativos</span></div>
-                <div><strong>Angular</strong><span data-i18n="crm.fact.frontend">frontend</span></div>
-                <div><strong>NestJS</strong><span data-i18n="crm.fact.backend">backend</span></div>
               </div>
             </div>
 
@@ -536,6 +561,75 @@
               <figcaption data-i18n="crm.gallery.usersCaption">Gestão de usuários e acessos</figcaption>
             </figure>
           </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="genutriModal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-box genutri-modal" role="dialog" aria-modal="true" aria-labelledby="genutriModalTitle">
+          <header class="genutri-header">
+            <div>
+              <span class="badge" data-i18n="genutri.badge">Case de arquitetura</span>
+              <h3 id="genutriModalTitle">Genutri.app</h3>
+              <p data-i18n="genutri.headerCaption">SaaS de gestão para nutricionistas</p>
+            </div>
+            <button type="button" class="close" data-i18n-key="crm.close" data-i18n-attr="aria-label" aria-label="Fechar modal">×</button>
+          </header>
+
+          <div class="genutri-body">
+            <section class="genutri-overview">
+              <span class="crm-section-label" data-i18n="genutri.overviewLabel">Desafio do produto</span>
+              <p data-i18n="genutri.overview">Criar uma plataforma para centralizar o atendimento nutricional: pacientes, avaliações, planos alimentares, arquivos e assinaturas, com dados protegidos por usuário.</p>
+            </section>
+
+            <div class="genutri-architecture">
+              <div class="genutri-architecture-heading">
+                <div>
+                  <span class="crm-section-label" data-i18n="genutri.architectureLabel">Visão da arquitetura</span>
+                  <h4 data-i18n="genutri.architectureTitle">Aplicação modular com serviços integrados</h4>
+                </div>
+                <span class="genutri-architecture-tag">Next.js · Supabase</span>
+              </div>
+
+              <div class="architecture-flow" data-i18n-key="genutri.flowLabel" data-i18n-attr="aria-label" aria-label="Fluxo da arquitetura do Genutri">
+                <div class="architecture-node">
+                  <span data-i18n="genutri.layer.application">Aplicação</span>
+                  <strong>Next.js App Router</strong>
+                  <small>React · TypeScript</small>
+                </div>
+                <span class="architecture-connector" aria-hidden="true">↓</span>
+                <div class="architecture-node architecture-node-primary">
+                  <span data-i18n="genutri.layer.platform">Dados e identidade</span>
+                  <strong>Supabase</strong>
+                  <small>Auth · PostgreSQL + RLS · Storage</small>
+                </div>
+                <span class="architecture-connector" aria-hidden="true">↓</span>
+                <div class="architecture-integrations">
+                  <div class="architecture-node"><span data-i18n="genutri.layer.payments">Assinaturas</span><strong>Stripe</strong></div>
+                  <div class="architecture-node"><span data-i18n="genutri.layer.email">E-mails transacionais</span><strong>Brevo</strong></div>
+                </div>
+                <div class="architecture-deploy"><span data-i18n="genutri.layer.deploy">Deploy e operação</span><strong>Vercel</strong></div>
+              </div>
+            </div>
+
+            <section class="genutri-decisions">
+              <span class="crm-section-label" data-i18n="genutri.decisionsLabel">Decisões e responsabilidades</span>
+              <ul class="genutri-decision-list">
+                <li data-i18n="genutri.decision1">Organização modular por funcionalidades para facilitar manutenção e evolução do produto.</li>
+                <li data-i18n="genutri.decision2">Supabase Auth e políticas RLS para autenticação e isolamento de dados entre usuários.</li>
+                <li data-i18n="genutri.decision3">Integração de pagamentos recorrentes com Stripe e comunicação transacional com Brevo.</li>
+                <li data-i18n="genutri.decision4">Testes automatizados com Vitest e Testing Library, documentação técnica e deploy em Vercel.</li>
+              </ul>
+            </section>
+
+            <footer class="genutri-modal-footer">
+              <span data-i18n="genutri.role">Responsável pelo ciclo completo: arquitetura, dados, frontend, backend e deploy.</span>
+              <a href="https://genutri.app/" target="_blank" rel="noopener noreferrer" class="project-action">
+                <span data-i18n="projects.viewProject">Acessar produto</span><span aria-hidden="true">↗</span>
+              </a>
+            </footer>
+          </div>
         </div>
       </div>
 
@@ -744,7 +838,7 @@
             data-i18n="footer.whatsapp">
             WhatsApp
           </a>
-          <a href="mailto:seuemail@email.com" data-i18n="footer.email">
+          <a href="mailto:iugorsette@gmail.com" data-i18n="footer.email">
             Email
           </a>
           <a href="https://www.linkedin.com/in/iugorsette/" target="_blank">

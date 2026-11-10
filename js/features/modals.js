@@ -12,6 +12,7 @@ export function initModals() {
   const crmImages = [...document.querySelectorAll('.crm-gallery img')]
 
   let scrollY = 0
+  const focusReturnStack = []
   let currentImageIndex = 0
   let scale = 1
   let panX = 0
@@ -103,16 +104,23 @@ export function initModals() {
 
   const openModal = (modal) => {
     if (!modal) return
+    focusReturnStack.push(document.activeElement)
     modal.classList.add('active')
+    modal.setAttribute('aria-hidden', 'false')
     lockScroll()
+    requestAnimationFrame(() => modal.querySelector('.close')?.focus())
   }
 
   const closeModal = (modal) => {
     if (!modal) return
     modal.classList.remove('active')
+    modal.setAttribute('aria-hidden', 'true')
 
     if (modal === galleryModal) {
+      const nestedZoomOpen = imageZoomModal?.classList.contains('active')
       imageZoomModal?.classList.remove('active')
+      imageZoomModal?.setAttribute('aria-hidden', 'true')
+      if (nestedZoomOpen) focusReturnStack.pop()
     }
 
     if (modal === imageZoomModal && zoomedImage) {
@@ -125,6 +133,10 @@ export function initModals() {
     }
 
     unlockScroll()
+    const returnFocus = focusReturnStack.pop()
+    if (returnFocus instanceof HTMLElement && returnFocus.isConnected) {
+      requestAnimationFrame(() => returnFocus.focus())
+    }
   }
 
   const renderZoomImage = () => {
@@ -245,6 +257,24 @@ export function initModals() {
   })
 
   document.addEventListener('keydown', (event) => {
+    const activeModal = document.querySelector('.modal.active')
+
+    if (event.key === 'Tab' && activeModal) {
+      const focusableElements = [...activeModal.querySelectorAll(
+        'button:not(:disabled), a[href], [tabindex="0"]',
+      )].filter((element) => element.getClientRects().length > 0)
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements.at(-1)
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault()
+        lastElement?.focus()
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault()
+        firstElement?.focus()
+      }
+    }
+
     if (event.key === 'Escape') {
       if (imageZoomModal?.classList.contains('active')) {
         closeModal(imageZoomModal)

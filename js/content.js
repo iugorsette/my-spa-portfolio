@@ -5,10 +5,10 @@ export const translations = {
     'meta.title':
       'Iugor Sette — Engenheiro de Software | Fullstack & Sistemas escaláveis',
     'meta.description':
-      'Engenheiro de software focado em sistemas escaláveis e sustentáveis. Fullstack, projetos reais e arquitetura limpa.',
+      'Engenheiro de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio, da arquitetura à operação em produção.',
     'meta.og.title': 'Iugor Sette — Engenheiro de Software',
     'meta.og.description':
-      'Engenheiro de software focado em produtos escaláveis, sistemas sob medida e projetos reais.',
+      'Engenheiro de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio.',
     'lang.toggle': 'Alternar idioma',
     'theme.toggle': 'Alternar tema',
     'nav.about': 'Sobre',
@@ -21,32 +21,38 @@ export const translations = {
     'hero.description':
       'Engenheiro fullstack com experiência entregando sistemas prontos para produção, ferramentas internas e plataformas sob medida para clientes reais.',
     'manifesto.eyebrow': 'Como eu trabalho',
-    'manifesto.line1': 'Eu não entrego telas.',
+    'manifesto.line1': 'Atuo em todo o ciclo de desenvolvimento de software.',
     'manifesto.line2':
-      'Entrego sistemas que continuam de pé quando o negócio cresce.',
+      'Da compreensão do problema à entrega e evolução em produção.',
     'manifesto.line3':
-      'Arquitetura limpa, <span class="accent">performance real</span> e responsabilidade de ponta a ponta.',
+      'Engenharia de software com foco em <span class="accent">qualidade, confiabilidade e resultado para o negócio.</span>',
     'about.eyebrow': 'Sobre mim',
     'about.title':
-      'Eu sou Iugor Sette,<br />um engenheiro de software focado em produtos do mundo real.',
+      'Engenheiro de software<br />com visão de produto e execução fullstack.',
     'about.p1':
-      'Trabalho como <strong>Engenheiro de Software Fullstack</strong> construindo sistemas escaláveis e sustentáveis para clientes e negócios reais. Minha experiência vai de arquiteturas modernas de front-end a sistemas backend focados em performance, confiabilidade e crescimento de longo prazo.',
+      'Sou <strong>Engenheiro de Software Fullstack</strong> e desenvolvo produtos digitais e sistemas de negócio, da definição da solução à operação em produção. Atuo em arquitetura, frontend, backend, dados e infraestrutura, com atenção à manutenibilidade e às necessidades de quem usa o produto.',
     'about.p2':
-      'Tenho bastante conforto trabalhando em <strong>produtos sob medida</strong>, ferramentas internas, CRMs, dashboards e integrações onde arquitetura limpa e experiência do desenvolvedor realmente importam.',
+      'Tenho experiência construindo <strong>produtos SaaS e sistemas internos</strong>, incluindo gestão de pacientes, CRMs comerciais, dashboards, integrações e automações. Também assumo decisões técnicas e acompanho a entrega de ponta a ponta.',
     'about.p3':
-      'Tenho experiência com startups, agências e clientes reais, entregando aplicações web prontas para produção, CRMs e ferramentas internas.',
-    'about.highlight.years': 'Anos construindo produtos',
+      'Entre os projetos que desenvolvi estão uma plataforma SaaS para nutricionistas e um CRM utilizado por uma equipe comercial. Trabalho com TypeScript, React, Angular, Node.js, NestJS e bancos relacionais e NoSQL.',
+    'about.highlight.years': 'Anos de experiência em desenvolvimento',
     'about.highlight.fullstack': 'Fullstack',
     'about.highlight.stack': 'Web e arquitetura de sistemas',
     'about.highlight.ownershipTitle': 'Ownership',
-    'about.highlight.ownership': 'Assumo total responsabilidade pela entrega',
+    'about.highlight.ownership': 'Da arquitetura à operação em produção',
     'projects.title': 'Projetos selecionados',
-    'projects.tag.webux': 'Web / UX',
-    'projects.tag.webfullstack': 'Web / Fullstack',
-    'projects.viewProject': 'Ver projeto',
+    'projects.tag.webux': 'Produto digital',
+    'projects.tag.webfullstack': 'Sistema fullstack',
+    'projects.tag.saas': 'Produto SaaS',
+    'projects.tag.crm': 'Sistema comercial',
+    'projects.genutri.kicker': 'Produto digital',
+    'projects.crm.kicker': 'Projeto para cliente',
+    'projects.viewProject': 'Acessar produto',
     'projects.viewDetails': 'Ver detalhes',
+    'projects.techLabel': 'Tecnologias do projeto',
+    'projects.genutri.frameTitle': 'Prévia ao vivo do Genutri.app',
     'projects.genutri.desc':
-      'SaaS para nutricionistas com gestão de pacientes, pré-consulta, planos alimentares, agenda e portal do paciente.',
+      'SaaS que centraliza pacientes, avaliações, planos alimentares e assinaturas para nutricionistas. Atuei na arquitetura, no desenvolvimento fullstack e nas integrações da plataforma.',
     'projects.genutri.alt': 'Preview do Genutri.app',
     'projects.energyfit.desc':
       'Landing page focada em UX e performance para um box de crosstrainer.',
@@ -57,81 +63,56 @@ export const translations = {
     'projects.blog.alt': 'Preview do site nutrirenata.com',
     'projects.jonny.desc': 'Portfólio pessoal para um rockstar com animações.',
     'projects.jonny.alt': 'Preview do site Jonny Alvez',
-    'projects.crm.title': 'Projeto de Cliente — CRM Personalizado',
+    'projects.crm.title': 'Acreditt — CRM de Gestão Comercial',
     'projects.crm.desc':
-      'CRM focado em vendas para centralizar leads, automatizar workflows e oferecer visibilidade em tempo real para equipes distribuídas.',
+      'CRM que centraliza leads e negociações da Acreditt. Reúne pipeline comercial, dashboards, permissões e atualizações em tempo real, atendendo uma equipe com mais de cinco usuários ativos.',
     'projects.crm.alt': 'Preview do CRM',
-    'crm.badge': 'Projeto de Cliente',
-    'crm.title': 'Sistema CRM Personalizado',
+    'crm.badge': 'Produto em produção',
+    'crm.title': 'Acreditt — CRM de Gestão Comercial',
+    'crm.headerCaption': 'CRM de vendas • Acreditt',
+    'crm.overviewLabel': 'Visão geral',
+    'crm.capabilitiesLabel': 'O que o sistema cobre',
+    'crm.fact.users': 'usuários ativos',
+    'crm.fact.frontend': 'frontend',
+    'crm.fact.backend': 'backend',
     'crm.close': 'Fechar modal',
     'crm.description':
-      'Sistema CRM personalizado desenvolvido para um cliente real com o objetivo de centralizar o gerenciamento de leads, automatizar a distribuição de vendas e oferecer visibilidade em tempo real para equipes comerciais.',
+      'CRM desenvolvido para a Acreditt para organizar leads, oportunidades e negociações da equipe comercial. A solução reúne pipeline de vendas, gestão de acessos, dashboards e atualização em tempo real.',
     'crm.feature.wp':
-      'Integração com WordPress para captura automática de leads',
-    'crm.feature.queue': 'Fila de distribuição de leads ponderada por vendedor',
+      'Aplicação Angular integrada a APIs REST desenvolvidas em NestJS',
+    'crm.feature.queue': 'Persistência em MongoDB e controle de usuários e permissões',
     'crm.feature.kanban': 'Quadro Kanban para gestão do funil de vendas',
     'crm.feature.realtime': 'Notificações em tempo real usando WebSockets',
-    'crm.feature.reports': 'Relatórios e dashboards para acompanhar performance',
+    'crm.feature.reports': 'Gestão financeira, comissões e dashboards comerciais',
     'crm.gallery.client': 'Visão geral do cliente no CRM',
     'crm.gallery.dashboard': 'Dashboard do CRM',
     'crm.gallery.kanban': 'Quadro kanban do CRM',
     'crm.gallery.users': 'Gestão de usuários no CRM',
+    'crm.gallery.dashboardCaption': 'Indicadores e visão geral da operação',
+    'crm.gallery.kanbanCaption': 'Pipeline comercial em Kanban',
+    'crm.gallery.clientCaption': 'Área de trabalho da equipe',
+    'crm.gallery.usersCaption': 'Gestão de usuários e acessos',
     'iframe.close': 'Fechar modal',
     'image.close': 'Fechar imagem',
     'image.previous': 'Imagem anterior',
     'image.next': 'Próxima imagem',
     'image.alt': 'Imagem ampliada do projeto',
-    'tech.eyebrow': 'Especialidade Técnica',
-    'tech.title': 'Stack principal de tecnologia',
-    'tech.frontend.title': 'Frontend Web',
+    'tech.eyebrow': 'Stack e experiência',
+    'tech.title': 'Tecnologias que uso para construir produtos',
+    'tech.intro': 'Uma visão organizada das ferramentas que aplico no desenvolvimento, integração e operação de software.',
+    'tech.frontend.label': 'Interface',
+    'tech.frontend.title': 'Frontend',
     'tech.frontend.desc':
-      'Arquiteturas modernas de frontend focadas em escalabilidade, manutenibilidade e evolução de longo prazo de sistemas complexos.',
-    'tech.frontend.angular':
-      '<strong>Angular</strong> — sistemas corporativos robustos, regras de negócio complexas, arquitetura modular e manutenibilidade de longo prazo',
-    'tech.frontend.html':
-      '<strong>HTML5 / CSS3</strong> — SPAs, PWAs e interfaces de alta performance com controle total de layout, animações e UX',
-    'tech.frontend.react':
-      '<strong>React</strong> — UIs flexíveis orientadas a componentes e aplicações centradas em estado',
-    'tech.frontend.vanilla':
-      '<strong>Vanilla JavaScript</strong> — features críticas de performance e soluções agnósticas de framework',
+      'Aplicações web organizadas em componentes, com foco em usabilidade e evolução contínua.',
     'tech.backend.title': 'Backend e APIs',
-    'tech.backend.desc':
-      'Serviços backend seguros, escaláveis e bem estruturados, desenhados para integração, performance e continuidade do negócio.',
-    'tech.backend.node':
-      '<strong>Node.js</strong> — APIs orientadas a eventos e serviços de alta taxa de requisições',
-    'tech.backend.nest':
-      '<strong>NestJS</strong> — arquitetura backend corporativa com tipagem forte, modularização e princípios SOLID',
-    'tech.backend.spring':
-      '<strong>Spring Boot</strong> — serviços Java resilientes para domínios complexos e sistemas de grande escala',
-    'tech.backend.dotnet':
-      '<strong>.NET</strong> — APIs estruturadas e aplicações de negócio em ambientes corporativos',
-    'tech.cloud.title': 'Cloud e Infraestrutura',
-    'tech.cloud.desc':
-      'Infraestrutura cloud-native focada em confiabilidade, automação e pipelines de entrega escaláveis.',
-    'tech.cloud.gcp':
-      '<strong>Google Cloud Platform (GCP)</strong> — hosting, storage, autenticação e serviços escaláveis',
-    'tech.cloud.cicd':
-      'Pipelines de CI/CD — workflows automatizados de build, testes e deploy',
-    'tech.cloud.deploy':
-      'Deploys escaláveis — ambientes pensados para crescimento e alta disponibilidade',
-    'tech.cloud.obs':
-      'Monitoramento e observabilidade — saúde da aplicação, logs e métricas',
-    'tech.mobile.title': 'Desenvolvimento Mobile',
-    'tech.mobile.desc':
-      'Aplicações mobile multiplataforma com lógica de negócio compartilhada e experiência consistente.',
-    'tech.mobile.flutter':
-      '<strong>Flutter</strong> (Dart) — UIs de alta performance com experiência próxima do nativo',
-    'tech.mobile.reactnative':
-      '<strong>React Native</strong> — codebase compartilhado com arquitetura voltada ao web',
-    'tech.mobile.ionic':
-      '<strong>Ionic</strong> — apps híbridos integrados a ecossistemas web',
-    'tech.automation.title': 'Automação e Dados',
-    'tech.automation.desc':
-      'Automação, extração de dados e otimização de fluxos para reduzir esforço manual e custos operacionais.',
-    'tech.automation.puppeteer':
-      '<strong>Puppeteer</strong> — automação de navegador, scraping e cenários de teste',
-    'tech.automation.python':
-      '<strong>Python</strong> — processamento de dados, scripts de automação e integrações',
+    'tech.backend.label': 'Serviços',
+    'tech.backend.desc': 'APIs e regras de negócio integradas a aplicações e serviços externos.',
+    'tech.data.title': 'Dados e Cloud',
+    'tech.data.label': 'Plataforma',
+    'tech.data.desc': 'Modelagem, deploy e serviços de nuvem para manter os produtos disponíveis e evolutivos.',
+    'tech.mobile.label': 'Complementar',
+    'tech.mobile.title': 'Mobile e Automação',
+    'tech.mobile.desc': 'Experiência multiplataforma e automações para ampliar os fluxos digitais.',
     'cta.eyebrow': 'Vamos trabalhar juntos',
     'cta.title':
       'Precisa de um engenheiro de software que consiga <span class="accent">assumir o produto</span>?',
@@ -151,10 +132,10 @@ export const translations = {
     'meta.title':
       'Iugor Sette — Software Engineer | Fullstack & Scalable Systems',
     'meta.description':
-      'Software Engineer focused on scalable and maintainable systems. Fullstack development, real client projects and clean architecture.',
+      'Fullstack Software Engineer experienced in SaaS products, CRMs and business systems, from architecture through production operations.',
     'meta.og.title': 'Iugor Sette — Software Engineer',
     'meta.og.description':
-      'Software Engineer focused on scalable products, custom systems and real client projects.',
+      'Fullstack Software Engineer experienced in SaaS products, CRMs and business systems.',
     'lang.toggle': 'Switch language',
     'theme.toggle': 'Toggle theme',
     'nav.about': 'About',
@@ -167,32 +148,38 @@ export const translations = {
     'hero.description':
       'Fullstack engineer with experience delivering production-ready systems, internal tools and custom platforms for real clients.',
     'manifesto.eyebrow': 'How I work',
-    'manifesto.line1': 'I don’t ship screens.',
+    'manifesto.line1': 'I work across the full software development lifecycle.',
     'manifesto.line2':
-      'I ship systems that keep standing as the business grows.',
+      'From understanding the problem to delivery and production evolution.',
     'manifesto.line3':
-      'Clean architecture, <span class="accent">real performance</span> and end-to-end ownership.',
+      'Software engineering focused on <span class="accent">quality, reliability and business outcomes.</span>',
     'about.eyebrow': 'About me',
     'about.title':
-      'I’m Iugor Sette,<br />a software engineer focused on real-world products.',
+      'Software engineer<br />with product thinking and fullstack execution.',
     'about.p1':
-      'I work as a <strong>Fullstack Software Engineer</strong> building scalable, maintainable systems for real clients and businesses. My experience ranges from modern front-end architectures to backend systems focused on performance, reliability and long-term growth.',
+      'I’m a <strong>Fullstack Software Engineer</strong> who builds digital products and business systems, from solution design through production operations. I work across architecture, frontend, backend, data and infrastructure, with a focus on maintainability and user needs.',
     'about.p2':
-      'I’m especially comfortable working on <strong>custom products</strong>, internal tools, CRMs, dashboards and integrations where clean architecture and developer experience really matter.',
+      'My experience includes building <strong>SaaS products and internal systems</strong>, including patient management, sales CRMs, dashboards, integrations and automations. I also take ownership of technical decisions and follow delivery end to end.',
     'about.p3':
-      'I have experience working with startups, agencies and real clients, delivering production-ready web applications, CRMs and internal tools.',
-    'about.highlight.years': 'Years building products',
+      'Projects include a SaaS platform for nutritionists and a CRM used by a sales team. I work with TypeScript, React, Angular, Node.js, NestJS, and relational and NoSQL databases.',
+    'about.highlight.years': 'Years of software development experience',
     'about.highlight.fullstack': 'Fullstack',
     'about.highlight.stack': 'Web & system architecture',
     'about.highlight.ownershipTitle': 'Ownership',
-    'about.highlight.ownership': 'I take full responsibility for delivery',
+    'about.highlight.ownership': 'From architecture through production operations',
     'projects.title': 'Selected Projects',
-    'projects.tag.webux': 'Web / UX',
-    'projects.tag.webfullstack': 'Web / Fullstack',
-    'projects.viewProject': 'View Project',
+    'projects.tag.webux': 'Digital product',
+    'projects.tag.webfullstack': 'Fullstack system',
+    'projects.tag.saas': 'SaaS product',
+    'projects.tag.crm': 'Sales system',
+    'projects.genutri.kicker': 'Digital product',
+    'projects.crm.kicker': 'Client project',
+    'projects.viewProject': 'Open product',
     'projects.viewDetails': 'View details',
+    'projects.techLabel': 'Project technologies',
+    'projects.genutri.frameTitle': 'Live preview of Genutri.app',
     'projects.genutri.desc':
-      'SaaS for nutritionists with patient management, pre-consultation flows, meal plans, scheduling and a patient portal.',
+      'SaaS platform that brings patient management, assessments, meal plans and subscriptions together for nutritionists. I worked on architecture, fullstack development and core platform integrations.',
     'projects.genutri.alt': 'Genutri.app preview',
     'projects.energyfit.desc':
       'Landing page focused on UX & performance to a crosstrainer box.',
@@ -203,80 +190,54 @@ export const translations = {
     'projects.blog.alt': 'nutrirenata.com website preview',
     'projects.jonny.desc': 'Personal portfolio to a rockstar with animations.',
     'projects.jonny.alt': 'Jonny Alvez website preview',
-    'projects.crm.title': 'Client Project — Custom CRM',
+    'projects.crm.title': 'Acreditt — Sales Management CRM',
     'projects.crm.desc':
-      'Sales-focused CRM built to centralize leads, automate workflows and provide real-time visibility for distributed teams.',
+      'CRM that centralizes Acreditt’s leads and deals. It brings together a sales pipeline, dashboards, permissions and real-time updates for a team of more than five active users.',
     'projects.crm.alt': 'CRM website preview',
-    'crm.badge': 'Client Project',
-    'crm.title': 'Custom CRM System',
+    'crm.badge': 'Production product',
+    'crm.title': 'Acreditt — Sales Management CRM',
+    'crm.headerCaption': 'Sales CRM • Acreditt',
+    'crm.overviewLabel': 'Overview',
+    'crm.capabilitiesLabel': 'What the system covers',
+    'crm.fact.users': 'active users',
+    'crm.fact.frontend': 'frontend',
+    'crm.fact.backend': 'backend',
     'crm.close': 'Close modal',
     'crm.description':
-      'Custom CRM system developed for a real client to centralize lead management, automate sales distribution and provide real-time visibility for sales teams.',
-    'crm.feature.wp': 'WordPress integration for automatic lead capture',
-    'crm.feature.queue': 'Weighted lead distribution queue per salesperson',
+      'CRM built for Acreditt to organize the sales team’s leads, opportunities and deals. The solution brings together a sales pipeline, access management, dashboards and real-time updates.',
+    'crm.feature.wp': 'Angular application integrated with REST APIs built in NestJS',
+    'crm.feature.queue': 'MongoDB persistence with user and permission management',
     'crm.feature.kanban': 'Kanban board for sales pipeline management',
     'crm.feature.realtime': 'Real-time notifications using WebSockets',
-    'crm.feature.reports': 'Reports and dashboards for performance tracking',
+    'crm.feature.reports': 'Financial management, commissions and sales dashboards',
     'crm.gallery.client': 'CRM client overview',
     'crm.gallery.dashboard': 'CRM dashboard',
     'crm.gallery.kanban': 'CRM kanban board',
     'crm.gallery.users': 'CRM users management',
+    'crm.gallery.dashboardCaption': 'Sales metrics and operational overview',
+    'crm.gallery.kanbanCaption': 'Sales pipeline in Kanban',
+    'crm.gallery.clientCaption': 'Team workspace',
+    'crm.gallery.usersCaption': 'User and access management',
     'iframe.close': 'Close modal',
     'image.close': 'Close image',
     'image.previous': 'Previous image',
     'image.next': 'Next image',
     'image.alt': 'Zoomed project image',
-    'tech.eyebrow': 'Technical Expertise',
-    'tech.title': 'Core Technology Stack',
-    'tech.frontend.title': 'Frontend Web',
-    'tech.frontend.desc':
-      'Modern frontend architectures focused on scalability, maintainability and long-term evolution of complex systems.',
-    'tech.frontend.angular':
-      '<strong>Angular</strong> — robust enterprise systems, complex business rules, modular architecture, long-term maintainability',
-    'tech.frontend.html':
-      '<strong>HTML5 / CSS3</strong> — SPAs, PWAs and high-performance interfaces with full control over layout, animations and UX',
-    'tech.frontend.react':
-      '<strong>React</strong> — flexible component-driven UIs and state-centric applications',
-    'tech.frontend.vanilla':
-      '<strong>Vanilla JavaScript</strong> — performance-critical features and framework-agnostic solutions',
+    'tech.eyebrow': 'Stack & experience',
+    'tech.title': 'Technologies I use to build products',
+    'tech.intro': 'A clear view of the tools I apply across software development, integration and operations.',
+    'tech.frontend.label': 'Interface',
+    'tech.frontend.title': 'Frontend',
+    'tech.frontend.desc': 'Component-based web applications focused on usability and continuous improvement.',
     'tech.backend.title': 'Backend & APIs',
-    'tech.backend.desc':
-      'Secure, scalable and well-structured backend services, designed for integration, performance and business continuity.',
-    'tech.backend.node':
-      '<strong>Node.js</strong> — event-driven APIs and high-throughput services',
-    'tech.backend.nest':
-      '<strong>NestJS</strong> — enterprise-grade backend architecture with strong typing, modularization and SOLID principles',
-    'tech.backend.spring':
-      '<strong>Spring Boot</strong> — resilient Java services for complex domains and large-scale systems',
-    'tech.backend.dotnet':
-      '<strong>.NET</strong> — structured APIs and business applications in corporate environments',
-    'tech.cloud.title': 'Cloud & Infrastructure',
-    'tech.cloud.desc':
-      'Cloud-native infrastructure focused on reliability, automation and scalable delivery pipelines.',
-    'tech.cloud.gcp':
-      '<strong>Google Cloud Platform (GCP)</strong> — hosting, storage, authentication and scalable services',
-    'tech.cloud.cicd':
-      'CI/CD pipelines — automated build, test and deployment workflows',
-    'tech.cloud.deploy':
-      'Scalable deployments — environments designed for growth and high availability',
-    'tech.cloud.obs':
-      'Monitoring & observability — application health, logs and metrics',
-    'tech.mobile.title': 'Mobile Development',
-    'tech.mobile.desc':
-      'Cross-platform mobile applications with shared business logic and consistent user experience.',
-    'tech.mobile.flutter':
-      '<strong>Flutter</strong> (Dart) — high-performance UIs with native-like experience',
-    'tech.mobile.reactnative':
-      '<strong>React Native</strong> — shared codebase with web-oriented architecture',
-    'tech.mobile.ionic':
-      '<strong>Ionic</strong> — hybrid mobile apps integrated with web ecosystems',
-    'tech.automation.title': 'Automation & Data',
-    'tech.automation.desc':
-      'Automation, data extraction and workflow optimization to reduce manual effort and operational cost.',
-    'tech.automation.puppeteer':
-      '<strong>Puppeteer</strong> — browser automation, scraping and testing scenarios',
-    'tech.automation.python':
-      '<strong>Python</strong> — data processing, automation scripts and integrations',
+    'tech.backend.label': 'Services',
+    'tech.backend.desc': 'APIs and business rules integrated with applications and external services.',
+    'tech.data.title': 'Data & Cloud',
+    'tech.data.label': 'Platform',
+    'tech.data.desc': 'Data modeling, deployment and cloud services that keep products available and ready to evolve.',
+    'tech.mobile.label': 'Additional',
+    'tech.mobile.title': 'Mobile & Automation',
+    'tech.mobile.desc': 'Cross-platform experiences and automations that extend digital workflows.',
     'cta.eyebrow': 'Let’s work together',
     'cta.title':
       'Need a software engineer who can <span class="accent">own the product</span>?',

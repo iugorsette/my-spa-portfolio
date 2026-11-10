@@ -3,12 +3,6 @@
   overflow: hidden;
 }
 
-.projects-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
 .about {
   background: linear-gradient(
     to bottom,

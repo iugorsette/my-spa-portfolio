@@ -8,7 +8,7 @@
 
     <meta
       name="description"
-      content="Engenheiro de software focado em sistemas escaláveis e sustentáveis. Fullstack, projetos reais e arquitetura limpa." />
+      content="Engenheiro de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio, da arquitetura à operação em produção." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Iugor Sette" />
     <meta name="robots" content="index, follow" />
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Iugor Sette — Engenheiro de Software" />
     <meta
       property="og:description"
-      content="Engenheiro de software focado em produtos escaláveis, sistemas sob medida e projetos reais." />
+      content="Engenheiro de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://iugorsette.vercel.app" />
     <meta
@@ -219,14 +219,14 @@
           </span>
 
           <p class="manifesto-line" data-i18n-html="manifesto.line1">
-            Eu não entrego telas.
+            Atuo em todo o ciclo de desenvolvimento de software.
           </p>
           <p class="manifesto-line" data-i18n-html="manifesto.line2">
-            Entrego sistemas que continuam de pé quando o negócio cresce.
+            Da compreensão do problema à entrega e evolução em produção.
           </p>
           <p class="manifesto-line" data-i18n-html="manifesto.line3">
-            Arquitetura limpa, <span class="accent">performance real</span> e
-            responsabilidade de ponta a ponta.
+            Engenharia de software com foco em
+            <span class="accent">qualidade, confiabilidade e resultado para o negócio.</span>
           </p>
         </div>
 
@@ -241,28 +241,29 @@
             </span>
 
             <h3 data-i18n-html="about.title">
-              Eu sou Iugor Sette,<br />
-              um engenheiro de software focado em produtos do mundo real.
+              Engenheiro de software<br />
+              com visão de produto e execução fullstack.
             </h3>
 
             <p data-i18n-html="about.p1">
               Trabalho como <strong>Engenheiro de Software Fullstack</strong>
-              construindo sistemas escaláveis e sustentáveis para clientes e
-              negócios reais. Minha experiência vai de arquiteturas modernas de
-              front-end a sistemas backend focados em performance, confiabilidade
-              e crescimento de longo prazo.
+              e desenvolvo produtos digitais e sistemas de negócio, da definição
+              da solução à operação em produção. Atuo em arquitetura, frontend,
+              backend, dados e infraestrutura, com atenção à manutenibilidade e
+              às necessidades de quem usa o produto.
             </p>
 
             <p data-i18n-html="about.p2">
-              Tenho bastante conforto trabalhando em
-              <strong>produtos sob medida</strong>, ferramentas internas, CRMs,
-              dashboards e integrações onde arquitetura limpa e experiência do
-              desenvolvedor realmente importam.
+              Tenho experiência construindo <strong>produtos SaaS e sistemas
+              internos</strong>, incluindo gestão de pacientes, CRMs comerciais,
+              dashboards, integrações e automações. Também assumo decisões
+              técnicas e acompanho a entrega de ponta a ponta.
             </p>
             <p data-i18n="about.p3">
-              Tenho experiência com startups, agências e clientes reais,
-              entregando aplicações web prontas para produção, CRMs e ferramentas
-              internas.
+              Entre os projetos que desenvolvi estão uma plataforma SaaS para
+              nutricionistas e um CRM utilizado por uma equipe comercial.
+              Trabalho com TypeScript, React, Angular, Node.js, NestJS e bancos
+              relacionais e NoSQL.
             </p>
           </div>
 
@@ -306,32 +307,40 @@
 
         <div class="projects-grid">
           <div class="project-card">
-            <div class="project-thumb">
-              <img
-                src="assets/genutri-thumb.png"
-                data-i18n-key="projects.genutri.alt"
-                data-i18n-attr="alt"
-                alt="Preview do Genutri.app" />
-              <div class="project-overlay">
-                <span class="project-tag" data-i18n="projects.tag.webfullstack">
-                  Web / Fullstack
-                </span>
+            <div class="project-thumb project-live-preview">
+              <iframe
+                src="https://genutri.app/"
+                data-i18n-key="projects.genutri.frameTitle"
+                data-i18n-attr="title"
+                title="Prévia ao vivo do Genutri.app"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <span class="project-type" data-i18n="projects.tag.saas">Produto SaaS</span>
+            </div>
+
+            <div class="project-info">
+              <div class="project-heading">
+                <div>
+                  <span class="project-kicker" data-i18n="projects.genutri.kicker">Produto digital</span>
+                  <h4>Genutri.app</h4>
+                </div>
                 <a
                   href="https://genutri.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="white link ghost">
-                  <span data-i18n="projects.viewProject">Ver projeto</span>
+                  class="project-action">
+                  <span data-i18n="projects.viewProject">Acessar produto</span>
+                  <span aria-hidden="true">↗</span>
                 </a>
               </div>
-            </div>
-
-            <div class="project-info">
-              <h4>Genutri.app</h4>
               <p data-i18n="projects.genutri.desc">
-                SaaS para nutricionistas com gestão de pacientes, pré-consulta,
-                planos alimentares, agenda e portal do paciente.
+                SaaS que centraliza pacientes, avaliações, planos alimentares e
+                assinaturas para nutricionistas. Atuei na arquitetura, no desenvolvimento
+                fullstack e nas integrações da plataforma.
               </p>
+              <ul class="project-tech" data-i18n-key="projects.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias do produto">
+                <li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Stripe</li>
+              </ul>
             </div>
           </div>
 
@@ -345,136 +354,48 @@
                 data-i18n-key="projects.crm.alt"
                 data-i18n-attr="alt"
                 alt="Preview do CRM" />
-              <div class="project-overlay">
-                <span class="project-tag" data-i18n="projects.tag.webfullstack">
-                  Web / Fullstack
-                </span>
-                <button
-                  class="white btn ghost"
-                  data-gallery
-                  data-i18n-key="projects.viewDetails"
-                  data-i18n-attr="aria-label"
-                  aria-label="Ver detalhes do CRM">
+              <span class="project-type" data-i18n="projects.tag.crm">Sistema comercial</span>
+            </div>
+
+            <div class="project-info">
+              <div class="project-heading">
+                <div>
+                  <span class="project-kicker" data-i18n="projects.crm.kicker">Projeto para cliente</span>
+                  <h4 data-i18n="projects.crm.title">Acreditt — CRM de Gestão Comercial</h4>
+                </div>
+                <button class="project-action" type="button" data-gallery aria-haspopup="dialog" aria-controls="galleryModal">
                   <span data-i18n="projects.viewDetails">Ver detalhes</span>
+                  <span aria-hidden="true">↗</span>
                 </button>
               </div>
-            </div>
-
-            <div class="project-info">
-              <h4 data-i18n="projects.crm.title">
-                Projeto de Cliente — CRM Personalizado
-              </h4>
               <p data-i18n="projects.crm.desc">
-                CRM focado em vendas para centralizar leads, automatizar
-                workflows e oferecer visibilidade em tempo real para equipes
-                distribuídas.
+                CRM que centraliza leads e negociações da Acreditt. Reúne pipeline
+                comercial, dashboards, permissões e atualizações em tempo real,
+                atendendo uma equipe com mais de cinco usuários ativos.
               </p>
+              <ul class="project-tech" data-i18n-key="projects.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias do produto">
+                <li>Angular</li><li>NestJS</li><li>MongoDB</li><li>WebSockets</li>
+              </ul>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="project-thumb">
-              <img
-                src="assets/energyfit-thumb.png"
-                data-i18n-key="projects.energyfit.alt"
-                data-i18n-attr="alt"
-                alt="Preview do site Energy Fit" />
-              <div class="project-overlay">
-                <span class="project-tag" data-i18n="projects.tag.webux">
-                  Web / UX
-                </span>
-                <a
-                  href="https://energyfit-ct.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="white link ghost">
-                  <span data-i18n="projects.viewProject">Ver projeto</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="project-info">
-              <h4>Energy Fit</h4>
-              <p data-i18n="projects.energyfit.desc">
-                Landing page focada em UX e performance para um box de
-                crosstrainer.
-              </p>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-thumb">
-              <img
-                src="assets/blog-nutri-thumb.png"
-                data-i18n-key="projects.blog.alt"
-                data-i18n-attr="alt"
-                alt="Preview do site nutrirenata.com" />
-              <div class="project-overlay">
-                <span class="project-tag" data-i18n="projects.tag.webux">
-                  Web / UX
-                </span>
-                <a
-                  href="https://nutrirenata.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="white link ghost">
-                  <span data-i18n="projects.viewProject">Ver projeto</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="project-info">
-              <h4 data-i18n="projects.blog.title">Blog da Nutricionista</h4>
-              <p data-i18n="projects.blog.desc">
-                Site institucional e blog em Astro + MDX para nutricionista,
-                com foco em conteúdo, SEO e captação de pacientes.
-              </p>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-thumb">
-              <img
-                src="assets/jonny-alvez-thumb.png"
-                data-i18n-key="projects.jonny.alt"
-                data-i18n-attr="alt"
-                alt="Preview do site Jonny Alvez" />
-              <div class="project-overlay">
-                <span class="project-tag" data-i18n="projects.tag.webux">
-                  Web / UX
-                </span>
-                <a
-                  href="https://jonny-alvez.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="white link ghost">
-                  <span data-i18n="projects.viewProject">Ver projeto</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="project-info">
-              <h4>Jonny Alvez</h4>
-              <p data-i18n="projects.jonny.desc">
-                Portfólio pessoal para um rockstar com animações.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       <!-- CRM MODAL -->
-      <div class="modal" id="galleryModal">
+      <div class="modal" id="galleryModal" aria-hidden="true">
         <div class="modal-overlay"></div>
 
-        <div class="modal-box crm-modal">
+        <div class="modal-box crm-modal" role="dialog" aria-modal="true" aria-labelledby="crmModalTitle">
           <header class="crm-header">
             <div>
               <span class="badge" data-i18n="crm.badge">Projeto de Cliente</span>
-              <h3 data-i18n="crm.title">Sistema CRM Personalizado</h3>
+              <h3 id="crmModalTitle" data-i18n="crm.title">Sistema CRM Personalizado</h3>
+              <p class="crm-header-caption" data-i18n="crm.headerCaption">CRM de vendas • Acreditt</p>
             </div>
 
             <button
+              type="button"
               class="close"
               data-i18n-key="crm.close"
               data-i18n-attr="aria-label"
@@ -484,67 +405,61 @@
           </header>
 
           <section class="crm-body">
-            <p class="crm-description" data-i18n="crm.description">
-              Sistema CRM personalizado desenvolvido para um cliente real com o
-              objetivo de centralizar o gerenciamento de leads, automatizar a
-              distribuição de vendas e oferecer visibilidade em tempo real para
-              equipes comerciais.
-            </p>
+            <div class="crm-overview">
+              <div>
+                <span class="crm-section-label" data-i18n="crm.overviewLabel">Visão geral</span>
+                <p class="crm-description" data-i18n="crm.description">
+                  CRM desenvolvido para a operação comercial da Acreditt, centralizando
+                  leads, negociações e acompanhamento de vendas em uma única plataforma.
+                </p>
+              </div>
+              <div class="crm-facts">
+                <div><strong>5+</strong><span data-i18n="crm.fact.users">usuários ativos</span></div>
+                <div><strong>Angular</strong><span data-i18n="crm.fact.frontend">frontend</span></div>
+                <div><strong>NestJS</strong><span data-i18n="crm.fact.backend">backend</span></div>
+              </div>
+            </div>
 
-            <ul class="crm-features">
-              <li data-i18n="crm.feature.wp">
-                Integração com WordPress para captura automática de leads
-              </li>
-              <li data-i18n="crm.feature.queue">
-                Fila de distribuição de leads ponderada por vendedor
-              </li>
-              <li data-i18n="crm.feature.kanban">
-                Quadro Kanban para gestão do funil de vendas
-              </li>
-              <li data-i18n="crm.feature.realtime">
-                Notificações em tempo real usando WebSockets
-              </li>
-              <li data-i18n="crm.feature.reports">
-                Relatórios e dashboards para acompanhar performance
-              </li>
-            </ul>
+            <div class="crm-capabilities">
+              <span class="crm-section-label" data-i18n="crm.capabilitiesLabel">O que o sistema cobre</span>
+              <ul class="crm-features">
+                <li data-i18n="crm.feature.wp">Aplicação Angular integrada a APIs REST desenvolvidas em NestJS</li>
+                <li data-i18n="crm.feature.queue">Persistência em MongoDB e controle de usuários e permissões</li>
+                <li data-i18n="crm.feature.kanban">Quadro Kanban para gestão do funil de vendas</li>
+                <li data-i18n="crm.feature.realtime">Notificações em tempo real usando WebSockets</li>
+                <li data-i18n="crm.feature.reports">Gestão financeira, comissões e dashboards comerciais</li>
+              </ul>
+            </div>
           </section>
 
           <section class="crm-gallery">
-            <img
-              src="assets/crm-client.png"
-              data-i18n-key="crm.gallery.client"
-              data-i18n-attr="alt"
-              alt="Visão geral do cliente no CRM"
-              loading="lazy" />
-            <img
-              src="assets/crm-dashboard.png"
-              data-i18n-key="crm.gallery.dashboard"
-              data-i18n-attr="alt"
-              alt="Dashboard do CRM"
-              loading="lazy" />
-            <img
-              src="assets/crm-kanban.png"
-              data-i18n-key="crm.gallery.kanban"
-              data-i18n-attr="alt"
-              alt="Quadro kanban do CRM"
-              loading="lazy" />
-            <img
-              src="assets/crm-users.png"
-              data-i18n-key="crm.gallery.users"
-              data-i18n-attr="alt"
-              alt="Gestão de usuários no CRM"
-              loading="lazy" />
+            <figure>
+              <img src="assets/crm-dashboard.png" data-i18n-key="crm.gallery.dashboard" data-i18n-attr="alt" alt="Dashboard do CRM" loading="lazy" />
+              <figcaption data-i18n="crm.gallery.dashboardCaption">Indicadores e visão geral da operação</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/crm-kanban.png" data-i18n-key="crm.gallery.kanban" data-i18n-attr="alt" alt="Quadro kanban do CRM" loading="lazy" />
+              <figcaption data-i18n="crm.gallery.kanbanCaption">Pipeline comercial em Kanban</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/crm-client.png" data-i18n-key="crm.gallery.client" data-i18n-attr="alt" alt="Visão geral do cliente no CRM" loading="lazy" />
+              <figcaption data-i18n="crm.gallery.clientCaption">Área de trabalho da equipe</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/crm-users.png" data-i18n-key="crm.gallery.users" data-i18n-attr="alt" alt="Gestão de usuários no CRM" loading="lazy" />
+              <figcaption data-i18n="crm.gallery.usersCaption">Gestão de usuários e acessos</figcaption>
+            </figure>
           </section>
         </div>
       </div>
 
       <!-- IFRAME MODAL -->
-      <div class="modal" id="iframeModal">
+      <div class="modal" id="iframeModal" aria-hidden="true">
         <div class="modal-overlay"></div>
 
         <div class="modal-box full">
           <button
+            type="button"
             class="close"
             data-i18n-key="iframe.close"
             data-i18n-attr="aria-label"
@@ -556,7 +471,7 @@
       </div>
 
       <!-- IMAGE ZOOM MODAL -->
-      <div class="modal" id="imageZoomModal">
+      <div class="modal" id="imageZoomModal" aria-hidden="true">
         <div class="modal-overlay"></div>
 
         <div class="zoom-box">
@@ -613,132 +528,45 @@
         <canvas class="bg-canvas"></canvas>
         <div class="tech-container">
           <span class="section-eyebrow" data-i18n="tech.eyebrow">
-            Especialidade Técnica
+            Stack e experiência
           </span>
           <h3 class="section-title" data-i18n="tech.title">
-            Stack principal de tecnologia
+            Tecnologias que uso para construir produtos
           </h3>
+          <p class="tech-intro" data-i18n="tech.intro">Uma visão organizada das ferramentas que aplico no desenvolvimento, integração e operação de software.</p>
 
           <div class="tech-grid">
-            <div class="tech-card reveal">
-              <h4 data-i18n="tech.frontend.title">Frontend Web</h4>
-              <p data-i18n="tech.frontend.desc">
-                Arquiteturas modernas de frontend focadas em escalabilidade,
-                manutenibilidade e evolução de longo prazo de sistemas complexos.
-              </p>
-              <ul class="tech-list">
-                <li data-i18n-html="tech.frontend.angular">
-                  <strong>Angular</strong> — sistemas corporativos robustos,
-                  regras de negócio complexas, arquitetura modular e
-                  manutenibilidade de longo prazo
-                </li>
-                <li data-i18n-html="tech.frontend.html">
-                  <strong>HTML5 / CSS3</strong> — SPAs, PWAs e interfaces de alta
-                  performance com controle total de layout, animações e UX
-                </li>
-                <li data-i18n-html="tech.frontend.react">
-                  <strong>React</strong> — UIs flexíveis orientadas a
-                  componentes e aplicações centradas em estado
-                </li>
-                <li data-i18n-html="tech.frontend.vanilla">
-                  <strong>Vanilla JavaScript</strong> — features críticas de
-                  performance e soluções agnósticas de framework
-                </li>
-              </ul>
-            </div>
+            <article class="tech-card reveal">
+              <div class="tech-card-top"><span class="tech-index">01</span><span class="tech-symbol">UI</span></div>
+              <span class="tech-category" data-i18n="tech.frontend.label">Interface</span>
+              <h4 data-i18n="tech.frontend.title">Frontend</h4>
+              <p data-i18n="tech.frontend.desc">Aplicações web organizadas em componentes, com foco em usabilidade e evolução contínua.</p>
+              <ul class="tech-chips"><li>Angular</li><li>React</li><li>TypeScript</li><li>HTML &amp; CSS</li></ul>
+            </article>
 
-            <div class="tech-card reveal">
-              <h4 data-i18n="tech.backend.title">Backend e APIs</h4>
-              <p data-i18n="tech.backend.desc">
-                Serviços backend seguros, escaláveis e bem estruturados,
-                desenhados para integração, performance e continuidade do
-                negócio.
-              </p>
-              <ul class="tech-list">
-                <li data-i18n-html="tech.backend.node">
-                  <strong>Node.js</strong> — APIs orientadas a eventos e
-                  serviços de alta taxa de requisições
-                </li>
-                <li data-i18n-html="tech.backend.nest">
-                  <strong>NestJS</strong> — arquitetura backend corporativa com
-                  tipagem forte, modularização e princípios SOLID
-                </li>
-                <li data-i18n-html="tech.backend.spring">
-                  <strong>Spring Boot</strong> — serviços Java resilientes para
-                  domínios complexos e sistemas de grande escala
-                </li>
-                <li data-i18n-html="tech.backend.dotnet">
-                  <strong>.NET</strong> — APIs estruturadas e aplicações de
-                  negócio em ambientes corporativos
-                </li>
-              </ul>
-            </div>
+            <article class="tech-card reveal">
+              <div class="tech-card-top"><span class="tech-index">02</span><span class="tech-symbol">API</span></div>
+              <span class="tech-category" data-i18n="tech.backend.label">Serviços</span>
+              <h4 data-i18n="tech.backend.title">Backend &amp; APIs</h4>
+              <p data-i18n="tech.backend.desc">APIs e regras de negócio integradas a aplicações e serviços externos.</p>
+              <ul class="tech-chips"><li>Node.js</li><li>NestJS</li><li>Spring Boot</li><li>.NET</li><li>REST</li></ul>
+            </article>
 
-            <div class="tech-card tech-card-wide reveal">
-              <h4 data-i18n="tech.cloud.title">Cloud e Infraestrutura</h4>
-              <p data-i18n="tech.cloud.desc">
-                Infraestrutura cloud-native focada em confiabilidade,
-                automação e pipelines de entrega escaláveis.
-              </p>
-              <ul class="tech-list">
-                <li data-i18n-html="tech.cloud.gcp">
-                  <strong>Google Cloud Platform (GCP)</strong> — hosting,
-                  storage, autenticação e serviços escaláveis
-                </li>
-                <li data-i18n="tech.cloud.cicd">
-                  Pipelines de CI/CD — workflows automatizados de build, testes
-                  e deploy
-                </li>
-                <li data-i18n="tech.cloud.deploy">
-                  Deploys escaláveis — ambientes pensados para crescimento e
-                  alta disponibilidade
-                </li>
-                <li data-i18n="tech.cloud.obs">
-                  Monitoramento e observabilidade — saúde da aplicação, logs e
-                  métricas
-                </li>
-              </ul>
-            </div>
+            <article class="tech-card reveal">
+              <div class="tech-card-top"><span class="tech-index">03</span><span class="tech-symbol">DB</span></div>
+              <span class="tech-category" data-i18n="tech.data.label">Plataforma</span>
+              <h4 data-i18n="tech.data.title">Dados &amp; Cloud</h4>
+              <p data-i18n="tech.data.desc">Modelagem, deploy e serviços de nuvem para manter os produtos disponíveis e evolutivos.</p>
+              <ul class="tech-chips"><li>PostgreSQL</li><li>MongoDB</li><li>GCP</li><li>Vercel</li><li>CI/CD</li></ul>
+            </article>
 
-            <div class="tech-card reveal">
-              <h4 data-i18n="tech.mobile.title">Desenvolvimento Mobile</h4>
-              <p data-i18n="tech.mobile.desc">
-                Aplicações mobile multiplataforma com lógica de negócio
-                compartilhada e experiência consistente.
-              </p>
-              <ul class="tech-list">
-                <li data-i18n-html="tech.mobile.flutter">
-                  <strong>Flutter</strong> (Dart) — UIs de alta performance com
-                  experiência próxima do nativo
-                </li>
-                <li data-i18n-html="tech.mobile.reactnative">
-                  <strong>React Native</strong> — codebase compartilhado com
-                  arquitetura voltada ao web
-                </li>
-                <li data-i18n-html="tech.mobile.ionic">
-                  <strong>Ionic</strong> — apps híbridos integrados a ecossistemas
-                  web
-                </li>
-              </ul>
-            </div>
-
-            <div class="tech-card reveal">
-              <h4 data-i18n="tech.automation.title">Automação e Dados</h4>
-              <p data-i18n="tech.automation.desc">
-                Automação, extração de dados e otimização de fluxos para reduzir
-                esforço manual e custos operacionais.
-              </p>
-              <ul class="tech-list">
-                <li data-i18n-html="tech.automation.puppeteer">
-                  <strong>Puppeteer</strong> — automação de navegador, scraping
-                  e cenários de teste
-                </li>
-                <li data-i18n-html="tech.automation.python">
-                  <strong>Python</strong> — processamento de dados, scripts de
-                  automação e integrações
-                </li>
-              </ul>
-            </div>
+            <article class="tech-card reveal">
+              <div class="tech-card-top"><span class="tech-index">04</span><span class="tech-symbol">+</span></div>
+              <span class="tech-category" data-i18n="tech.mobile.label">Complementar</span>
+              <h4 data-i18n="tech.mobile.title">Mobile &amp; Automação</h4>
+              <p data-i18n="tech.mobile.desc">Experiência multiplataforma e automações para ampliar os fluxos digitais.</p>
+              <ul class="tech-chips"><li>Flutter</li><li>React Native</li><li>Ionic</li><li>Python</li><li>Puppeteer</li></ul>
+            </article>
           </div>
         </div>
       </section>

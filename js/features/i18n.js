@@ -1,6 +1,7 @@
 import { defaultLang, translations } from '../content.js'
 
 const LANG_STORAGE_KEY = 'lang'
+let educationStatusTimer
 
 function normalizeLang(lang) {
   if (!lang) return null
@@ -58,6 +59,32 @@ function updateYear() {
   if (yearEl) yearEl.textContent = new Date().getFullYear()
 }
 
+function updateEducationStatus(lang) {
+  const status = document.querySelector('[data-education-status]')
+  if (!status) return
+
+  const [year, month, day] = status.dataset.completionDate.split('-').map(Number)
+  const completionDate = new Date(year, month - 1, day)
+  const isComplete = new Date() >= completionDate
+  const state = isComplete ? 'completed' : 'current'
+
+  status.textContent = getValue(lang, status.dataset[`${state}Key`])
+  status.classList.toggle('is-complete', isComplete)
+
+  const completion = document.querySelector('[data-education-completion]')
+  if (completion) {
+    completion.textContent = getValue(lang, completion.dataset[`${state}Key`])
+  }
+
+  clearTimeout(educationStatusTimer)
+  if (!isComplete) {
+    educationStatusTimer = setTimeout(
+      () => updateEducationStatus(lang),
+      Math.min(completionDate.getTime() - Date.now() + 50, 2_000_000_000),
+    )
+  }
+}
+
 function applyTranslations(lang) {
   document.documentElement.setAttribute('lang', lang)
 
@@ -97,6 +124,7 @@ function applyTranslations(lang) {
 
   updateMeta(lang)
   updateYear()
+  updateEducationStatus(lang)
 
   // Reescrever innerHTML apaga qualquer DOM montado sobre o texto (ex.: os spans
   // de palavra das animações de scroll). Quem depende disso remonta aqui.

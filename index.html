@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      Iugor Sette — Engenheiro de Software | Fullstack & Sistemas escaláveis
+      Iugor Sette — Engenheiro e Arquiteto de Software
     </title>
 
     <meta
       name="description"
-      content="Engenheiro de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio, da arquitetura à operação em produção." />
+      content="Engenheiro e Arquiteto de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio, da arquitetura à operação em produção." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Iugor Sette" />
     <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="Iugor Sette — Engenheiro de Software" />
+    <meta property="og:title" content="Iugor Sette — Engenheiro e Arquiteto de Software" />
     <meta
       property="og:description"
-      content="Engenheiro de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio." />
+      content="Engenheiro e Arquiteto de Software Fullstack com experiência em produtos SaaS, CRMs e sistemas de negócio." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://iugorsette.vercel.app" />
     <meta
@@ -72,6 +72,7 @@
     <link rel="stylesheet" href="css/sections/manifesto.css" />
     <link rel="stylesheet" href="css/sections/projects.css" />
     <link rel="stylesheet" href="css/sections/about.css" />
+    <link rel="stylesheet" href="css/sections/experience.css" />
     <link rel="stylesheet" href="css/sections/cta.css" />
     <link rel="stylesheet" href="css/sections/footer.css" />
     <link rel="stylesheet" href="css/sections/tech-expertise.css" />
@@ -108,6 +109,19 @@
               <rect x="14" y="14" width="7" height="7" rx="1" />
             </svg>
             <span class="label" data-i18n="nav.projects">Projetos</span>
+          </a>
+
+          <a
+            href="#experience"
+            data-section="experience"
+            data-i18n-key="nav.experience"
+            data-i18n-attr="aria-label"
+            aria-label="Experiência">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="7" width="18" height="14" rx="2" />
+              <path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2" />
+            </svg>
+            <span class="label" data-i18n="nav.experience">Experiência</span>
           </a>
 
           <a
@@ -242,7 +256,7 @@
 
             <h3 data-i18n-html="about.title">
               Engenheiro de software<br />
-              com visão de produto e execução fullstack.
+              e arquiteto de software.
             </h3>
 
             <p data-i18n-html="about.p1">
@@ -259,11 +273,10 @@
               dashboards, integrações e automações. Também assumo decisões
               técnicas e acompanho a entrega de ponta a ponta.
             </p>
-            <p data-i18n="about.p3">
-              Entre os projetos que desenvolvi estão uma plataforma SaaS para
-              nutricionistas e um CRM utilizado por uma equipe comercial.
-              Trabalho com TypeScript, React, Angular, Node.js, NestJS e bancos
-              relacionais e NoSQL.
+            <p data-i18n-html="about.p3">
+              Sou formado em <strong>Análise e Desenvolvimento de Sistemas</strong> e atualmente
+              curso a especialização em Arquitetura de Software Distribuído da
+              PUC Minas.
             </p>
           </div>
 
@@ -282,23 +295,96 @@
 
             <div class="highlight">
               <span class="highlight-number" data-i18n="about.highlight.fullstack">
-                Fullstack
+                Arquitetura
               </span>
               <span class="highlight-label" data-i18n="about.highlight.stack">
-                Web e arquitetura de sistemas
+                Sistemas distribuídos, APIs e cloud
               </span>
             </div>
 
             <div class="highlight">
               <span class="highlight-number" data-i18n="about.highlight.ownershipTitle">
-                Ownership
+                Formação
               </span>
               <span class="highlight-label" data-i18n="about.highlight.ownership">
-                Assumo total responsabilidade pela entrega
+                Tecnólogo em ADS • PUC Minas, 2024
               </span>
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="section experience" id="experience">
+        <header class="experience-heading">
+          <span class="section-eyebrow" data-i18n="experience.eyebrow">Trajetória profissional</span>
+          <h3 data-i18n="experience.title">Experiência profissional</h3>
+          <p data-i18n="experience.intro">Atuação em produtos digitais, sistemas de negócio e automação de processos.</p>
+        </header>
+
+        <ol class="experience-list">
+          <li class="experience-item">
+            <div class="experience-period">
+              <span class="experience-index">01</span>
+              <span data-i18n="experience.smart.period">Ago 2024 — Nov 2026</span>
+              <span data-i18n="experience.smart.location">Remoto</span>
+            </div>
+            <article class="experience-card">
+              <header class="experience-card-header">
+                <div>
+                  <h4>Smart Leilões</h4>
+                  <p class="experience-role" data-i18n="experience.smart.role">Desenvolvedor Full Stack</p>
+                </div>
+                <span class="experience-employment" data-i18n="experience.fullTime">Tempo integral</span>
+              </header>
+              <p class="experience-summary" data-i18n="experience.smart.summary">Desenvolvimento e evolução de uma plataforma SaaS de leilões judiciais, investimentos imobiliários e operações financeiras, composta por produtos integrados e utilizada por milhares de pessoas.</p>
+              <ul class="experience-points">
+                <li data-i18n="experience.smart.point1">Desenvolvimento de funcionalidades de ponta a ponta, em parceria com Produto e Design, incluindo requisitos, regras de negócio e experiência dos fluxos.</li>
+                <li data-i18n="experience.smart.point2">Evolução de aplicações Angular e TypeScript com RxJS e NgRx, além de APIs e serviços em Node.js e NestJS.</li>
+                <li data-i18n="experience.smart.point3">Participação em decisões de arquitetura frontend, padrões reutilizáveis, desempenho e manutenção da plataforma.</li>
+                <li data-i18n="experience.smart.point4">Testes unitários e CI/CD, contribuindo para cobertura próxima de 80%; participação no deploy, monitoramento e operação em Firebase e GCP.</li>
+                <li data-i18n="experience.smart.point5">Uso estruturado de IA no fluxo de engenharia para investigação, implementação, testes e documentação, com validação técnica das entregas.</li>
+              </ul>
+              <div class="experience-result">
+                <span data-i18n="experience.deliveries">Entregas em destaque</span>
+                <p data-i18n="experience.smart.result">Gerenciador de imóveis com Kanban, módulo de gamificação e fluxo de assinatura digital para contratos de cotização.</p>
+              </div>
+            <ul class="experience-tags" data-i18n-key="experience.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias utilizadas">
+                <li>Angular</li><li>TypeScript</li><li>RxJS</li><li>NgRx</li><li>NestJS</li><li>MongoDB</li><li>GCP</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="experience-item">
+            <div class="experience-period">
+              <span class="experience-index">02</span>
+              <span data-i18n="experience.contaja.period">Nov 2022 — Jul 2024</span>
+              <span data-i18n="experience.contaja.location">Viçosa · Híbrido</span>
+            </div>
+            <article class="experience-card">
+              <header class="experience-card-header">
+                <div>
+                  <h4>Contajá</h4>
+                  <p class="experience-role" data-i18n="experience.contaja.role">Analista de Desenvolvimento de Sistemas</p>
+                </div>
+                <span class="experience-employment" data-i18n="experience.fullTime">Tempo integral</span>
+              </header>
+              <p class="experience-summary" data-i18n="experience.contaja.summary">Desenvolvimento de sistemas e automações para processos fiscais e contábeis em uma plataforma utilizada por milhares de empresas.</p>
+              <ul class="experience-points">
+                <li data-i18n="experience.contaja.point1">Automação de rotinas fiscais em Python; em um processo, reduzi o tempo de cerca de sete dias para poucas horas.</li>
+                <li data-i18n="experience.contaja.point2">Implementação de APIs e integrações com serviços governamentais para consultas e operações fiscais.</li>
+                <li data-i18n="experience.contaja.point3">Desenvolvimento de serviços e integrações REST e GraphQL, com modelagem de dados em PostgreSQL e MongoDB.</li>
+                <li data-i18n="experience.contaja.point4">Desenvolvimento frontend em Angular e React, além de automação de processos com TypeScript, Puppeteer e Docker.</li>
+              </ul>
+              <div class="experience-result">
+                <span data-i18n="experience.impact">Impacto</span>
+                <p data-i18n="experience.contaja.result">Redução expressiva do tempo de execução de rotinas fiscais, liberando a equipe de tarefas manuais repetitivas.</p>
+              </div>
+              <ul class="experience-tags" data-i18n-key="experience.techLabel" data-i18n-attr="aria-label" aria-label="Tecnologias utilizadas">
+                <li>Python</li><li>TypeScript</li><li>Angular</li><li>Node.js</li><li>REST &amp; GraphQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Docker</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
       </section>
 
       <!-- PROJECTS -->
@@ -557,7 +643,7 @@
               <span class="tech-category" data-i18n="tech.data.label">Plataforma</span>
               <h4 data-i18n="tech.data.title">Dados &amp; Cloud</h4>
               <p data-i18n="tech.data.desc">Modelagem, deploy e serviços de nuvem para manter os produtos disponíveis e evolutivos.</p>
-              <ul class="tech-chips"><li>PostgreSQL</li><li>MongoDB</li><li>GCP</li><li>Vercel</li><li>CI/CD</li></ul>
+              <ul class="tech-chips"><li>PostgreSQL</li><li>MongoDB</li><li>AWS</li><li>GCP</li><li>Vercel</li><li>CI/CD</li></ul>
             </article>
 
             <article class="tech-card reveal">
@@ -568,6 +654,37 @@
               <ul class="tech-chips"><li>Flutter</li><li>React Native</li><li>Ionic</li><li>Python</li><li>Puppeteer</li></ul>
             </article>
           </div>
+
+          <aside class="tech-study">
+            <div class="tech-study-copy">
+              <div class="tech-study-meta">
+                <span class="tech-category" data-i18n="education.degree.label">Graduação • PUC Minas</span>
+                <span class="study-status is-complete" data-i18n="education.degree.status">Concluído</span>
+              </div>
+              <h4 data-i18n="education.degree.title">Análise e Desenvolvimento de Sistemas</h4>
+              <p class="tech-study-completion" data-i18n="education.degree.completion">Concluído em 2024</p>
+              <p data-i18n="education.degree.description">Formação em desenvolvimento de software, engenharia de software e resolução de problemas por meio de projetos multidisciplinares com abordagem prática.</p>
+            </div>
+            <ul class="tech-chips tech-study-chips" data-i18n-key="education.degree.chipsLabel" data-i18n-attr="aria-label" aria-label="Áreas estudadas na graduação">
+              <li>Desenvolvimento Full Stack</li><li>Engenharia de Software</li><li>APIs REST</li><li>Bancos de Dados</li><li>Projetos multidisciplinares</li>
+            </ul>
+          </aside>
+
+          <aside class="tech-study">
+            <div class="tech-study-copy">
+              <div class="tech-study-meta">
+                <span class="tech-category" data-i18n="tech.study.label">Pós-graduação • PUC Minas</span>
+                <span class="study-status" data-education-status data-completion-date="2027-06-01" data-current-key="education.specialization.current" data-completed-key="education.specialization.completed">Em andamento</span>
+              </div>
+              <h4 data-i18n="tech.study.title">Arquitetura de Software Distribuído</h4>
+              <p class="tech-study-completion" data-education-completion data-current-key="education.specialization.expected" data-completed-key="education.specialization.finished">Conclusão prevista: junho de 2027</p>
+              <p data-i18n="tech.study.desc">Formação da PUC Minas com aprofundamento em sistemas distribuídos, microsserviços, cloud-native, DevSecOps, arquiteturas orientadas a eventos e observabilidade.</p>
+              <a href="https://vemprapuc.pucminas.br/arquitetura-de-software-distribuido-ead-com-videoaulas" target="_blank" rel="noopener noreferrer" data-i18n="tech.study.link">Conhecer a especialização</a>
+            </div>
+            <ul class="tech-chips tech-study-chips" data-i18n-key="tech.study.chipsLabel" data-i18n-attr="aria-label" aria-label="Conteúdos da especialização">
+              <li>Microsserviços &amp; APIs</li><li>Cloud Native &amp; Serverless</li><li>Event-Driven</li><li>DevOps &amp; DevSecOps</li><li>Zero Trust</li><li>Observabilidade</li>
+            </ul>
+          </aside>
         </div>
       </section>
 

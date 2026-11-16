@@ -36,6 +36,8 @@
   overflow: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--border) transparent;
+  scrollbar-width: thin;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
@@ -94,6 +96,8 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--border) transparent;
+  scrollbar-width: thin;
 }
 
 .crm-header h3 {
@@ -947,6 +951,11 @@
 .crm-gallery::-webkit-scrollbar,
 .modal-box::-webkit-scrollbar {
   width: 6px;
+}
+
+.crm-gallery::-webkit-scrollbar-track,
+.modal-box::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .crm-gallery::-webkit-scrollbar-thumb,

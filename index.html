@@ -80,9 +80,7 @@
   <body>
     <header class="sticky-header" id="stickyHeader">
       <div class="header-inner">
-        <strong class="logo desktop-only">Iugor Sette</strong>
-
-        <nav class="header-nav">
+        <nav class="header-nav" id="primaryNavigation">
           <a
             href="#about"
             data-section="about"
@@ -94,6 +92,19 @@
               <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
             </svg>
             <span class="label" data-i18n="nav.about">Sobre</span>
+          </a>
+
+          <a
+            href="#experience"
+            data-section="experience"
+            data-i18n-key="nav.experience"
+            data-i18n-attr="aria-label"
+            aria-label="Experiência">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="7" width="18" height="14" rx="2" />
+              <path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2" />
+            </svg>
+            <span class="label" data-i18n="nav.experience">Experiência</span>
           </a>
 
           <a
@@ -109,19 +120,6 @@
               <rect x="14" y="14" width="7" height="7" rx="1" />
             </svg>
             <span class="label" data-i18n="nav.projects">Projetos</span>
-          </a>
-
-          <a
-            href="#experience"
-            data-section="experience"
-            data-i18n-key="nav.experience"
-            data-i18n-attr="aria-label"
-            aria-label="Experiência">
-            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="7" width="18" height="14" rx="2" />
-              <path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2" />
-            </svg>
-            <span class="label" data-i18n="nav.experience">Experiência</span>
           </a>
 
           <a
@@ -152,53 +150,58 @@
           </a>
         </nav>
       </div>
+      <button class="nav-expand-toggle" id="navExpandToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Expandir menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M9 4v16" />
+          <path class="toggle-arrow" d="M12 9l3 3-3 3" />
+        </svg>
+        <span class="toggle-label">Expandir menu</span>
+      </button>
+      <div class="top-controls">
+        <div class="theme-control">
+          <span class="control-label" data-i18n="control.theme">Tema</span>
+          <div class="theme-switch premium">
+            <input
+              type="checkbox"
+              id="themeToggle"
+              data-i18n-key="theme.toggle"
+              data-i18n-attr="aria-label"
+              aria-label="Alternar tema" />
+
+            <span class="track">
+              <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" />
+                <g>
+                  <line x1="12" y1="1" x2="12" y2="4" />
+                  <line x1="12" y1="20" x2="12" y2="23" />
+                  <line x1="1" y1="12" x2="4" y2="12" />
+                  <line x1="20" y1="12" x2="23" y2="12" />
+                  <line x1="4.5" y1="4.5" x2="6.5" y2="6.5" />
+                  <line x1="17.5" y1="17.5" x2="19.5" y2="19.5" />
+                  <line x1="17.5" y1="6.5" x2="19.5" y2="4.5" />
+                  <line x1="4.5" y1="19.5" x2="6.5" y2="17.5" />
+                </g>
+              </svg>
+              <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+              </svg>
+              <span class="thumb"></span>
+            </span>
+          </div>
+        </div>
+        <div class="language-control">
+          <span class="control-label" data-i18n="control.language">Idioma</span>
+          <div class="lang-toggle" id="langToggle" role="group" data-i18n-key="lang.toggle" data-i18n-attr="aria-label" aria-label="Alternar idioma">
+            <button type="button" data-lang-option="pt-BR" aria-label="Português">PT</button>
+            <button type="button" data-lang-option="en-US" aria-label="English">EN</button>
+          </div>
+        </div>
+
+      </div>
     </header>
 
     <main>
-      <!-- TOP CONTROLS -->
-      <div class="top-controls">
-        <button
-          id="langToggle"
-          type="button"
-          data-i18n-key="lang.toggle"
-          data-i18n-attr="aria-label"
-          aria-label="Alternar idioma">
-          PT
-        </button>
-
-        <div class="theme-switch premium">
-          <input
-            type="checkbox"
-            id="themeToggle"
-            data-i18n-key="theme.toggle"
-            data-i18n-attr="aria-label"
-            aria-label="Alternar tema" />
-
-          <span class="track">
-            <!-- SUN -->
-            <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="4" />
-              <g>
-                <line x1="12" y1="1" x2="12" y2="4" />
-                <line x1="12" y1="20" x2="12" y2="23" />
-                <line x1="1" y1="12" x2="4" y2="12" />
-                <line x1="20" y1="12" x2="23" y2="12" />
-                <line x1="4.5" y1="4.5" x2="6.5" y2="6.5" />
-                <line x1="17.5" y1="17.5" x2="19.5" y2="19.5" />
-                <line x1="17.5" y1="6.5" x2="19.5" y2="4.5" />
-                <line x1="4.5" y1="19.5" x2="6.5" y2="17.5" />
-              </g>
-            </svg>
-
-            <!-- MOON -->
-            <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
-            </svg>
-
-            <span class="thumb"></span>
-          </span>
-        </div>
-      </div>
 
       <!-- HERO -->
       <section class="hero with-canvas hero-parallax">

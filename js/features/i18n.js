@@ -117,10 +117,11 @@ function applyTranslations(lang) {
     })
   })
 
-  const langToggle = document.getElementById('langToggle')
-  if (langToggle) {
-    langToggle.textContent = lang === 'pt-BR' ? 'PT' : 'EN'
-  }
+  document.querySelectorAll('[data-lang-option]').forEach((option) => {
+    const selected = option.dataset.langOption === lang
+    option.classList.toggle('selected', selected)
+    option.setAttribute('aria-pressed', String(selected))
+  })
 
   updateMeta(lang)
   updateYear()
@@ -134,14 +135,18 @@ function applyTranslations(lang) {
 export function initI18n() {
   let currentLang = getInitialLang()
 
-  const langToggle = document.getElementById('langToggle')
-  if (langToggle) {
-    langToggle.addEventListener('click', () => {
-      currentLang = currentLang === 'pt-BR' ? 'en-US' : 'pt-BR'
+  document.querySelectorAll('[data-lang-option]').forEach((option) => {
+    option.addEventListener('click', () => {
+      const expanded = document.getElementById('stickyHeader')?.classList.contains('expanded')
+      const targetLang = expanded
+        ? option.dataset.langOption
+        : currentLang === 'pt-BR' ? 'en-US' : 'pt-BR'
+      if (targetLang === currentLang) return
+      currentLang = targetLang
       localStorage.setItem(LANG_STORAGE_KEY, currentLang)
       applyTranslations(currentLang)
     })
-  }
+  })
 
   applyTranslations(currentLang)
 }

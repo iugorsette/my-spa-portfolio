@@ -71,57 +71,67 @@ export function initHeroTechMap() {
     })
   }
 
-  const addBranch = (area, item, parent, index, count, level = 0) => {
+  const createBranch = (area, item, parent, index, count, level = 0, parentNode = null, specs = []) => {
     const [label, description, children] = item
-    const { width, height } = dimensions()
-    const inward = Math.atan2(height / 2 - parent[1], width / 2 - parent[0])
-    const spread = count === 1 ? 0 : -1.15 + (2.3 * index) / (count - 1)
-    const angle = inward + spread + branchJitter[index % branchJitter.length]
-    const radius = Math.min(185, Math.max(112, Math.min(width, height) * 0.23)) * (0.88 + (index % 4) * 0.08)
-    const nodeWidth = Math.min(210, Math.max(116, label.length * 7.2 + 34))
+    const { width } = dimensions()
+    const nodeWidth = Math.min(210, width * 0.42, Math.max(116, label.length * 7.2 + 34))
     const nodeHeight = 36 + index % 3 * 5
-    const position = [
-      Math.max(nodeWidth / 2 + 12, Math.min(width - nodeWidth / 2 - 12, parent[0] + Math.cos(angle) * radius)),
-      Math.max(nodeHeight / 2 + 14, Math.min(height - nodeHeight / 2 - 22, parent[1] + Math.sin(angle) * radius)),
-    ]
-    const bend = (index % 2 ? 1 : -1) * (20 + index % 3 * 15)
-    const middleX = (parent[0] + position[0]) / 2
-    svg.append(svgElement('path', {
-      class: 'focus-map-edge',
-      d: `M ${parent[0]} ${parent[1]} C ${middleX + bend} ${parent[1] + bend}, ${middleX - bend} ${position[1] - bend}, ${position[0]} ${position[1]}`,
-      pathLength: '1',
-      style: `--edge-delay:${index * 35}ms;--edge-width:${1 + index % 4 * 0.28}`,
-    }))
-
     const key = `${area.id}:${label}`
     const isOpen = expandedBranches.has(key)
-    const node = svgElement('g', {
-      class: `focus-map-node focus-map-skill${isOpen ? ' is-expanded' : ''}${selectedSkillKey === key ? ' is-selected' : ''}${level ? ' is-nested' : ''}`,
-      transform: `translate(${position[0] - nodeWidth / 2} ${position[1] - nodeHeight / 2})`,
-      role: 'button',
-      tabindex: '0',
-      'aria-label': `${label}. ${description}`,
-      'aria-expanded': String(Boolean(children?.length && isOpen)),
-      'aria-pressed': String(selectedSkillKey === key),
-      'data-node-id': `skill:${key}`,
-      style: `--node-delay:${index * 35}ms`,
-    })
-    node.append(svgElement('rect', { width: nodeWidth, height: nodeHeight, rx: '16' }))
-    node.append(svgElement('text', { x: '15', y: String(nodeHeight / 2 + 6), textLength: String(nodeWidth - 36), lengthAdjust: 'spacingAndGlyphs' }, label))
-    if (children?.length) node.append(svgElement('circle', { class: 'focus-node-dot', cx: String(nodeWidth - 13), cy: String(nodeHeight / 2), r: '3' }))
-    svg.append(node)
-    activateWithKeyboard(node, () => {
-      if (children?.length) {
-        if (expandedBranches.has(key)) expandedBranches.delete(key)
-        else expandedBranches.add(key)
-      } else {
-        selectedSkillKey = key
-      }
-      render()
+    const spec = { area, item, parent, parentNode, index, count, level, key, label, description, children, nodeWidth, nodeHeight }
+    specs.push(spec)
+    if (children?.length && isOpen) children.forEach((child, childIndex) => createBranch(area, child, null, childIndex, children.length, level + 1, spec, specs))
+    return spec
+  }
+
+  const desiredPosition = (spec, width, height) => {
+    const parent = spec.parentNode ? [spec.parentNode.x, spec.parentNode.y] : spec.parent
+    const inward = Math.atan2(height / 2 - parent[1], width / 2 - parent[0])
+    const spread = spec.count === 1 ? 0 : -1.12 + (2.24 * spec.index) / (spec.count - 1)
+    const angle = inward + spread + branchJitter[spec.index % branchJitter.length]
+    const radius = Math.min(195, Math.max(118, Math.min(width, height) * 0.24)) * (0.88 + (spec.index % 4) * 0.08)
+    return [parent[0] + Math.cos(angle) * radius, parent[1] + Math.sin(angle) * radius]
+  }
+
+  const solvePositions = (specs, obstacles, width, height) => {
+    specs.forEach((spec) => {
+      spec.desired = desiredPosition(spec, width, height)
+      spec.x = spec.desired[0]
+      spec.y = spec.desired[1]
     })
 
-    if (children?.length && isOpen) {
-      children.forEach((child, childIndex) => addBranch(area, child, position, childIndex, children.length, level + 1))
+    const gap = 12
+    for (let pass = 0; pass < 150; pass += 1) {
+      specs.forEach((spec) => {
+        const desired = desiredPosition(spec, width, height)
+        spec.x += (desired[0] - spec.x) * 0.035
+        spec.y += (desired[1] - spec.y) * 0.035
+        spec.x = Math.max(spec.nodeWidth / 2 + 10, Math.min(width - spec.nodeWidth / 2 - 10, spec.x))
+        spec.y = Math.max(spec.nodeHeight / 2 + 12, Math.min(height - spec.nodeHeight / 2 - 16, spec.y))
+      })
+
+      const separate = (a, b, fixed = false) => {
+        const dx = a.x - b.x
+        const dy = a.y - b.y
+        const bWidth = b.nodeWidth ?? b.width
+        const bHeight = b.nodeHeight ?? b.height
+        const overlapX = (a.nodeWidth + bWidth) / 2 + gap - Math.abs(dx)
+        const overlapY = (a.nodeHeight + bHeight) / 2 + gap - Math.abs(dy)
+        if (overlapX <= 0 || overlapY <= 0) return
+        const signX = dx === 0 ? (specs.indexOf(a) % 2 ? 1 : -1) : Math.sign(dx)
+        const signY = dy === 0 ? 1 : Math.sign(dy)
+        if (overlapX < overlapY) a.x += signX * (fixed ? overlapX : overlapX / 2)
+        else a.y += signY * (fixed ? overlapY : overlapY / 2)
+      }
+
+      specs.forEach((spec, index) => {
+        for (let other = index + 1; other < specs.length; other += 1) separate(spec, specs[other])
+        obstacles.forEach((obstacle) => separate(spec, obstacle, true))
+      })
+      specs.forEach((spec) => {
+        spec.x = Math.max(spec.nodeWidth / 2 + 10, Math.min(width - spec.nodeWidth / 2 - 10, spec.x))
+        spec.y = Math.max(spec.nodeHeight / 2 + 12, Math.min(height - spec.nodeHeight / 2 - 16, spec.y))
+      })
     }
   }
 
@@ -132,14 +142,70 @@ export function initHeroTechMap() {
     svg.replaceChildren()
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
 
+    const specs = []
+    const obstacles = []
     activeAreas.forEach((area) => {
       const point = pointButtons.find((button) => button.dataset.mapCategory === area.id)
-      if (expandedAreas.has(area.id) && point) {
+      if (point) {
         const heroBounds = hero.getBoundingClientRect()
         const pointBounds = point.getBoundingClientRect()
         const position = [pointBounds.left - heroBounds.left + pointBounds.width / 2, pointBounds.top - heroBounds.top + pointBounds.height / 2]
-        area.items.forEach((item, index) => addBranch(area, item, position, index, area.items.length))
+        let left = pointBounds.left - heroBounds.left
+        let right = left + pointBounds.width
+        let top = pointBounds.top - heroBounds.top
+        let bottom = top + pointBounds.height
+        if (expandedAreas.has(area.id)) {
+          const label = point.querySelector('.point-label')?.getBoundingClientRect()
+          if (label) {
+            left = Math.min(left, label.left - heroBounds.left)
+            right = Math.max(right, label.right - heroBounds.left)
+            top = Math.min(top, label.top - heroBounds.top)
+            bottom = Math.max(bottom, label.bottom - heroBounds.top)
+          }
+        }
+        obstacles.push({ x: (left + right) / 2, y: (top + bottom) / 2, width: right - left, height: bottom - top })
+        if (expandedAreas.has(area.id)) area.items.forEach((item, index) => createBranch(area, item, position, index, area.items.length, 0, null, specs))
       }
+    })
+
+    solvePositions(specs, obstacles, width, height)
+    specs.forEach((spec, index) => {
+      const parent = spec.parentNode ? [spec.parentNode.x, spec.parentNode.y] : spec.parent
+      const startX = parent[0]
+      const startY = parent[1]
+      const endX = spec.x
+      const endY = spec.y
+      const bend = Math.min(64, Math.hypot(endX - startX, endY - startY) * 0.32)
+      const angle = Math.atan2(endY - startY, endX - startX)
+      const path = svgElement('path', {
+        d: `M ${startX} ${startY} Q ${startX + Math.cos(angle) * bend} ${startY + Math.sin(angle) * bend} ${endX} ${endY}`,
+        class: 'focus-map-edge',
+        style: `--edge-delay:${Math.min(index * 24, 420)}ms`,
+      })
+      svg.append(path)
+
+      const group = svgElement('g', {
+        class: `focus-map-node focus-map-skill${spec.level ? ' is-nested' : ''}${expandedBranches.has(spec.key) ? ' is-expanded' : ''}${selectedSkillKey === spec.key ? ' is-selected' : ''}`,
+        transform: `translate(${spec.x - spec.nodeWidth / 2} ${spec.y - spec.nodeHeight / 2})`,
+        tabindex: '0', role: 'button', 'data-node-id': spec.key,
+        'aria-label': `${spec.label}: ${spec.description}`,
+        'aria-expanded': String(Boolean(spec.children?.length && expandedBranches.has(spec.key))),
+        style: `--node-delay:${Math.min(index * 24, 420)}ms`,
+      })
+      group.append(svgElement('rect', { width: spec.nodeWidth, height: spec.nodeHeight, rx: spec.nodeHeight / 2 }))
+      group.append(svgElement('circle', { class: 'focus-node-dot', cx: spec.nodeWidth - 14, cy: spec.nodeHeight / 2, r: 3.5 }))
+      const text = svgElement('text', { x: 15, y: spec.nodeHeight / 2 + 5 }, spec.label)
+      text.setAttribute('textLength', String(Math.max(40, spec.nodeWidth - 42)))
+      text.setAttribute('lengthAdjust', 'spacingAndGlyphs')
+      group.append(text)
+      activateWithKeyboard(group, () => {
+        if (spec.children?.length) {
+          if (expandedBranches.has(spec.key)) expandedBranches.delete(spec.key)
+          else expandedBranches.add(spec.key)
+        } else selectedSkillKey = selectedSkillKey === spec.key ? null : spec.key
+        render()
+      })
+      svg.append(group)
     })
 
     if (focusedNodeId) {

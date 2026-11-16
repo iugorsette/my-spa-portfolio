@@ -1,4 +1,3 @@
-
 .hero {
   position: relative;
   min-height: 100vh;
@@ -7,65 +6,56 @@
   overflow: hidden;
 }
 
-/* ===== CANVAS BASE ===== */
 .hero canvas {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-/* ===== GLOW DINÂMICO ===== */
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(
-      700px circle at 30% 40%,
-      rgba(94, 234, 212, 0.12),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px circle at 70% 60%,
-      rgba(94, 234, 212, 0.08),
-      transparent 65%
-    );
+    radial-gradient(700px circle at 30% 40%, rgba(94, 234, 212, 0.12), transparent 60%),
+    radial-gradient(900px circle at 70% 60%, rgba(94, 234, 212, 0.08), transparent 65%);
   pointer-events: none;
 }
 
-/* ===== CONTENT ===== */
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 1200px;
   padding: 0 8%;
   text-align: left;
 }
+
 .hero-name {
   display: inline-block;
+  margin-bottom: 12px;
+  color: var(--text);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text);
-  margin-bottom: 12px;
   opacity: 0.85;
 }
 
 .hero-eyebrow {
   display: inline-block;
+  margin-bottom: 20px;
+  color: var(--muted);
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 20px;
 }
 
 .hero-title {
+  margin-bottom: 24px;
   font-size: clamp(2.8rem, 6vw, 4.8rem);
   line-height: 1.05;
-  margin-bottom: 24px;
 }
 
 .hero-title .accent {
@@ -74,25 +64,270 @@
 }
 
 .hero-description {
-  font-size: 1.05rem;
-  line-height: 1.7;
   max-width: 640px;
   color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 640px) {
-  .hero-content {
-    text-align: left;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-  }
+.hero-skill-points {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
 }
+
+.hero.with-canvas > .hero-overlay { position: absolute; inset: 0; z-index: 1; }
+.hero.with-canvas > .hero-skill-points { position: absolute; inset: 0; z-index: 3; }
+.hero.with-canvas > .tech-map-focus { position: absolute; inset: 0; z-index: 4; }
+
+.hero-point-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  opacity: 0.16;
+  transition: opacity 0.6s ease;
+}
+
+.hero-point-lines path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-dasharray: 3 10;
+}
+
+.hero-skill-point {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  animation: pointFloat 5s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.point-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 75%, transparent);
+  transition: width 0.35s ease, height 0.35s ease, box-shadow 0.35s ease;
+}
+
+.point-label {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: max-content;
+  max-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-soft) 56%, transparent);
+  color: var(--text);
+  font-size: 0.78rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-4px, -50%) scale(0.94);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.hero-skill-point:hover .point-label,
+.hero-skill-point:focus-visible .point-label { opacity: 1; transform: translate(0, -50%) scale(1); }
+.hero-skill-point:hover .point-label,
+.hero-skill-point:focus-visible .point-label { opacity: 1; }
+
+.hero-skill-point:hover .point-dot,
+.hero-skill-point:focus-visible .point-dot {
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 90%, transparent);
+}
+
+.hero-skill-point.is-active .point-label {
+  opacity: 1;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hero.map-active .hero-skill-point { animation-play-state: paused; }
+html.tech-map-active .sticky-header { opacity: 0; pointer-events: none; }
+
+.hero-content { transition: opacity 0.48s ease, transform 0.48s ease, filter 0.48s ease; }
+.hero.map-active .hero-content {
+  opacity: 0;
+  transform: translateY(-16px) scale(0.985);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+@keyframes pointFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -9px; }
+}
+
+.tech-map-focus {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tech-map-focus[hidden] { display: none !important; }
+
+.tech-map-focus::before {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+  left: var(--origin-x, 50%);
+  top: var(--origin-y, 50%);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 8px white, 0 0 24px var(--accent), 0 0 60px var(--accent);
+  animation: branchStar 0.85s ease-out both;
+}
+
+@keyframes branchStar {
+  0% { opacity: 0.9; transform: scale(1); }
+  55% { opacity: 0.55; transform: scale(24); }
+  100% { opacity: 0; transform: scale(48); }
+}
+
+html.tech-map-active,
+html.tech-map-active body { overflow: hidden; }
+
+.tech-map-back {
+  position: absolute;
+  z-index: 5;
+  top: 24px;
+  left: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 15px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-soft) 72%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: auto;
+  animation: backButtonIn 0.45s ease 0.42s forwards;
+}
+
+.tech-map-back:hover { border-color: var(--accent); color: var(--accent); }
+.tech-map-back > span:first-child { font-size: 1.15rem; line-height: 1; }
+
+.tech-map-focus-svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.focus-map-edge {
+  fill: none;
+  stroke: color-mix(in srgb, var(--accent) 50%, var(--muted));
+  stroke-width: var(--edge-width, 1.4);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  vector-effect: non-scaling-stroke;
+  animation: drawBranch 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  animation-delay: var(--edge-delay);
+  opacity: 0.65;
+}
+
+@keyframes drawBranch { to { stroke-dashoffset: 0; } }
+
+.focus-map-node { cursor: pointer; outline: none; pointer-events: auto; }
+.focus-map-node rect {
+  fill: color-mix(in srgb, var(--bg-soft) 67%, transparent);
+  stroke: color-mix(in srgb, var(--text) 19%, transparent);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  transition: fill 0.22s ease, stroke 0.22s ease, filter 0.22s ease;
+}
+
+.focus-map-node text {
+  fill: var(--text);
+  font: 500 20px 'Inter', sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+.focus-node-dot { fill: var(--accent); filter: drop-shadow(0 0 8px var(--accent)); }
+.focus-map-skill { animation: skillBloom 0.5s cubic-bezier(0.2, 0.8, 0.3, 1) both; animation-delay: var(--node-delay); }
+.is-nested rect { fill: color-mix(in srgb, var(--accent) 8%, var(--bg-soft)); }
+
+@keyframes skillBloom {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.focus-map-skill:hover rect,
+.focus-map-skill:focus-visible rect,
+.focus-map-skill.is-expanded rect,
+.focus-map-skill.is-selected rect {
+  fill: color-mix(in srgb, var(--accent) 16%, var(--bg-soft));
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--accent) 25%, transparent));
+}
+
+@keyframes backButtonIn { to { opacity: 1; } }
 
 .hero-parallax .bg-canvas,
 .hero-parallax .hero-overlay,
-.hero-parallax .hero-content {
-  will-change: transform, opacity;
+.hero-parallax .hero-content { will-change: transform, opacity; }
+
+@media (max-width: 640px) {
+  .hero-content { text-align: left; }
+  .hero-title { font-size: 2.4rem; }
+  .hero-skill-point { width: 34px; height: 34px; }
+  .hero-point-lines { opacity: 0.1; }
+  .tech-map-back {
+    top: max(14px, env(safe-area-inset-top));
+    left: 14px;
+    padding: 9px 12px;
+    font-size: 0.78rem;
+  }
+  .tech-map-focus-svg { width: 100%; height: 100%; }
+  .focus-map-node text { font-size: 14px; }
+}
+
+@media (min-width: 641px) and (max-width: 1000px) {
+  .hero-content { max-width: 58%; padding: 0 4%; }
+  .hero-title { font-size: clamp(2.1rem, 5vw, 3.4rem); }
+  .hero-description { font-size: 0.92rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-skill-point,
+  .focus-map-edge,
+  .focus-map-skill,
+  .tech-map-focus::before,
+  .tech-map-back { animation: none; opacity: 1; }
 }

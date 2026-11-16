@@ -25,6 +25,9 @@ export const translations = {
       'Construindo <span class="accent">Produtos escaláveis</span><br />para negócios reais',
     'hero.description':
       'Engenheiro fullstack com experiência entregando sistemas prontos para produção, ferramentas internas e plataformas sob medida para clientes reais.',
+    'hero.map.back': 'Voltar ao portfólio',
+    'hero.map.areas': 'Áreas de tecnologia',
+    'hero.map.graph': 'Mapa de tecnologias e habilidades',
     'manifesto.eyebrow': 'Como eu trabalho',
     'manifesto.line1': 'Atuo em todo o ciclo de desenvolvimento de software.',
     'manifesto.line2':
@@ -222,6 +225,9 @@ export const translations = {
       'Building <span class="accent">Scalable</span><br />Products for Real Businesses',
     'hero.description':
       'Fullstack engineer with experience delivering production-ready systems, internal tools and custom platforms for real clients.',
+    'hero.map.back': 'Back to portfolio',
+    'hero.map.areas': 'Technology areas',
+    'hero.map.graph': 'Technology and skills map',
     'manifesto.eyebrow': 'How I work',
     'manifesto.line1': 'I work across the full software development lifecycle.',
     'manifesto.line2':

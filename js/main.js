@@ -5,6 +5,7 @@ import { initTheme } from './features/theme.js'
 import { initCanvasBackgrounds } from './features/hero-canvas.js'
 import { initReveal } from './core/observer.js'
 import { initHeroParallax } from './features/hero-parallax.js'
+import { initHeroTechMap } from './features/hero-tech-map.js'
 import { initSpyScroll } from './features/spy-scroll.js'
 import { initI18n } from './features/i18n.js'
 import { initScrollAnimations } from './features/scroll-animations.js'
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme()
   initCanvasBackgrounds()
   initHeroParallax()
+  initHeroTechMap()
   initSpyScroll()
   // por último: o pin do ScrollTrigger mede a página e mexe no layout.
   initScrollAnimations()

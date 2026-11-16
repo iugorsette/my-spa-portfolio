@@ -206,7 +206,6 @@
       <!-- HERO -->
       <section class="hero with-canvas hero-parallax">
         <canvas class="bg-canvas"></canvas>
-
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
@@ -225,6 +224,36 @@
             para produção, ferramentas internas e plataformas sob medida para
             clientes reais.
           </p>
+        </div>
+
+        <div class="hero-skill-points" role="group" data-i18n-key="hero.map.areas" data-i18n-attr="aria-label" aria-label="Áreas de tecnologia">
+          <svg class="hero-point-lines" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M680 182C760 165 840 165 920 196C900 260 860 295 830 308C805 365 770 420 730 455C700 495 660 545 620 574" />
+          </svg>
+          <button class="hero-skill-point" style="--x:68%;--y:26%;--delay:0ms" data-map-category="frontend" aria-label="Frontend">
+            <span class="point-dot"></span><span class="point-label" data-map-category-label="frontend">Frontend</span>
+          </button>
+          <button class="hero-skill-point" style="--x:79%;--y:24%;--delay:180ms" data-map-category="backend" aria-label="Backend e APIs">
+            <span class="point-dot"></span><span class="point-label" data-map-category-label="backend">Backend &amp; APIs</span>
+          </button>
+          <button class="hero-skill-point" style="--x:92%;--y:28%;--delay:320ms" data-map-category="data" aria-label="Dados e Cloud">
+            <span class="point-dot"></span><span class="point-label" data-map-category-label="data">Dados &amp; Cloud</span>
+          </button>
+          <button class="hero-skill-point" style="--x:83%;--y:44%;--delay:80ms" data-map-category="architecture" aria-label="Arquitetura">
+            <span class="point-dot"></span><span class="point-label" data-map-category-label="architecture">Arquitetura</span>
+          </button>
+          <button class="hero-skill-point" style="--x:73%;--y:65%;--delay:250ms" data-map-category="engineering" aria-label="Engenharia">
+            <span class="point-dot"></span><span class="point-label" data-map-category-label="engineering">Engenharia</span>
+          </button>
+          <button class="hero-skill-point" style="--x:62%;--y:82%;--delay:400ms" data-map-category="mobile" aria-label="Mobile e Automação">
+            <span class="point-dot"></span><span class="point-label" data-map-category-label="mobile">Mobile &amp; Automação</span>
+          </button>
+        </div>
+        <div class="tech-map-focus" id="techMapFocus" aria-hidden="true" hidden>
+          <button class="tech-map-back" type="button" data-map-close>
+            <span aria-hidden="true">←</span><span data-i18n="hero.map.back">Voltar ao portfólio</span>
+          </button>
+          <svg class="tech-map-focus-svg" id="heroTechMap" viewBox="0 0 1000 700" preserveAspectRatio="none" role="group" data-i18n-key="hero.map.graph" data-i18n-attr="aria-label" aria-label="Mapa de tecnologias e habilidades"></svg>
         </div>
       </section>
 
